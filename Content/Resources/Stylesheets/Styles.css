@@ -148,13 +148,13 @@ caption
 {
 	background-image: url('../Images/lvzr6l2t1bwh1.jpg');
 	background-size: cover;
-	color: #daa520;
-	font-family: monospace;
-	font-size: 10pt;
 	text-align: center;
 	padding: 8px;
 	border-bottom: 1px solid cyan;
 	box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.3);
+	font-family: monospace;
+	font-size: 10pt;
+	color: #daa520;
 }
 
 /* Header cells */
@@ -198,5 +198,13 @@ table:focus,
 table:hover
 {
 	animation: tableGlow 3s ease-in-out infinite alternate;
+}
+
+@media Test
+{
+	td
+	{
+		border: solid 8px #000000;
+	}
 }
 
