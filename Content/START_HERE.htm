@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>Amir OS: start here</h1>
+        <p>Amir OS provides continuity across assistants. It is a collection of files, not a model or an automatic memory service. A client must be pointed here; reading the same contract improves consistency but does not make different models identical.</p>
+        <h2>Always read</h2>
+        <p>Read identity/COLLABORATION.md for the small, stable collaboration contract. Then follow the current user request. Do not load the entire vault, history, or TARS context by default.</p>
+        <p>&#160;</p>
+        <p>For operational/repository tasks or after a model switch, run node tools/agent_bootstrap.mjs --route general (or homelab / tars). Its recovery section identifies unfinished local checkpoints; verify uncertain actions before retrying. See docs/INTERRUPTION_RECOVERY.md when starting tracked work or recovering an interruption.</p>
+        <p>&#160;</p>
+        <h2>Load only the relevant route</h2>
+        <table>
+            <col style="width: 405px;" />
+            <col style="width: 541px;" />
+            <tbody>
+                <tr>
+                    <td>Work inside this repository</td>
+                    <td>AGENTS.md</td>
+                </tr>
+                <tr>
+                    <td>TARS source, deployment, or diagnostics</td>
+                    <td>HEAD.md, then relevant TARS project docs</td>
+                </tr>
+                <tr>
+                    <td>Homelab services, Homarr, Transmission, or SSH troubleshooting</td>
+                    <td>AGENTS.md, then docs/HOMELAB_QUICK_REFERENCE.md</td>
+                </tr>
+                <tr>
+                    <td>Resume interrupted foundation work</td>
+                    <td>memory/FOUNDATION_HANDOFF.md ; verify it status against files</td>
+                </tr>
+                <tr>
+                    <td>Learning, personal planning, or daily notes </td>
+                    <td>Obsidian vault Home.md, then LearningQueue.md</td>
+                </tr>
+                <tr>
+                    <td>Understand Memory ownership </td>
+                    <td>MEMORY_PROTOCOL.md</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>On this Windows machine the vault is C:/Users/Admin/Documents/Amir's Obsidian Vault. The versioned repository is C:/Users/Admin/Documents/Amir_OS. These are different folders with different responsibilities.</p>
+        <p>For TARS, node tools/agent_bootstrap.mjs prints live Git state and declared project status. It does not verify the Pi. python tools/continuity_bootstrap_v2.py prints a bounded briefing without editing source records.</p>
+        <h1>Finishing work</h1>
+        <p>Record the outcome, evidence, remaining uncertainty, and next action in the relevant project or learning record. A prior plan is context, not permission to execute it automatically. Preserve raw history; generate short context views from it.</p>
+    </body>
+</html>
