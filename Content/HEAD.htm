@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+    </head>
+    <body>
+        <h1>TARS Operational HEAD</h1>
+        <p>This is the TARS navigation page. Begin general assistant sessions at START_HERE.md. PROJECT_STATE.json declares the software checkpoint and separate acceptance gates; Git and timestamped runtime checks verify actual state.</p>
+        <h2>Current State</h2>
+        <p>Current release version: tars-v10.3.1 (development candidate baseline) / tars-v10.2.1 (deployed runtime baseline)</p>
+        <p>Release tag targets: tars-v10.3.1 (6de185859a1d9e35a5293c838bbaef8d624b1c5c — Phase 10.3.1 candidate), tars-v10.2.1 (ad3f6f53a7d1a1990e4c57092fd377c9c11ee516 — deployed Pi runtime)</p>
+        <p>Development verification: run git rev-parse HEAD; the foundation audit began at b51260f on 2026-10-01. A historical SHA is not a live branch pointer.</p>
+        <p>Current branch: master</p>
+        <p>Last verified production runtime: ad3f6f53a7d1a1990e4c57092fd377c9c11ee516 — /health, Pi checkout, and container image verified on 2026-10-06 (uptime 3,384,231s, 0 alerts); see docs/FOUNDATION_RUNTIME_CHECK_2026-10-06.md.</p>
+        <p>Current phase: Phase 10.3.1 Observatory extraction checkpoint. The candidate is implemented in local source, shadow-capable, and disabled by default. The running Pi is at ad3f6f5, before candidate checkpoint commit 6de1858; no runtime authority has moved.</p>
+        <p>Independent hardware gate: Phase 9.4 display/touch/reliability acceptance remains open in PROJECT_STATE.json. This does not move the software checkpoint backward.</p>
+        <p>Last validated milestone marker: tars-v10.3.1 — Phase 10.3.1 candidate baseline; tars-v10.2.1 — Phase 10.2.1 deployed baseline.</p>
+        <p>Active workstream: Phase 10.3.1 candidate validation only. TARS_RUNTIME_MODE=legacy; frontend remains authoritative for worldState, autonomy, persistence, and behavioral memory.</p>
+        <h2>Important Version Note</h2>
+        <p>tars-v10.3.1 is the development baseline release tag, and tars-v10.2.1 is the deployed production baseline tag. At last verification, master had maintenance commits after those tags. This is normal forward-only development, not permission to rewrite releases. If post-release state should become a release, create a new tag/version.</p>
+        <p>Live branch HEAD is mutable. Before any release, deployment, or state claim, check it directly:</p>
+        <p>git rev-parse HEAD</p>
+        <h2>Known Repository Conflicts</h2>
+        <p>version.md records the Amir OS platform version (v0.9.0), not the TARS runtime release.</p>
+        <p>docs/CHANGELOG.md is Amir OS platform history and does not currently function as the complete TARS release ledger.</p>
+        <p>Historical project docs may describe Phase 9.4 as pending display/kiosk work. Treat Git history and release tags as historical truth, then verify production runtime before making runtime claims.</p>
+        <p>memory/HEAD.md is now a pointer to this file; do not use old memory HEAD content as authority.</p>
+        <p>RELEASE_STATE.md records the release/development/production split; use it before deciding version names.</p>
+        <h2>Navigation</h2>
+        <p>Agent contract: AGENTS.md</p>
+        <p>Machine-readable state: PROJECT_STATE.json</p>
+        <p>Agent bootstrap: tools/agent_bootstrap.mjs</p>
+        <p>Staged-file guard: tools/check_staged_files.mjs</p>
+        <p>Mission: NORTH_STAR.md</p>
+        <p>Release state: RELEASE_STATE.md</p>
+        <p>Roadmap reconciliation: ROADMAP_RECONCILIATION.md</p>
+        <p>Engineering rules: ENGINEERING_PRINCIPLES.md</p>
+        <p>Version/release rules: VERSIONING_POLICY.md</p>
+        <p>Known issues: KNOWN_ISSUES.md</p>
+        <p>TARS architecture: projects/tars-face/docs/ARCHITECTURE.md</p>
+        <p>Behavioral memory: projects/tars-face/docs/BEHAVIORAL_MEMORY.md</p>
+        <p>TARS current state detail: projects/tars-face/docs/CURRENT_STATE.md</p>
+        <p>Phase history / roadmap: projects/tars-face/docs/PHASE_HISTORY.md</p>
+        <p>Deployment runbook: projects/tars-face/docs/DEPLOYMENT_RUNBOOK.md</p>
+        <p>Agent entry point: projects/tars-face/AGENTS.md</p>
+        <p>Amir OS platform changelog: docs/CHANGELOG.md</p>
+        <h2>Phase 10.3.1 Observatory Extraction Checkpoint</h2>
+        <h3>Completed</h3>
+        <ul>
+            <li>
+                <p>Contract archaeology complete.</p>
+            </li>
+            <li>
+                <p>Contract freeze approved.</p>
+            </li>
+            <li>
+                <p>Candidate ObservatoryDataLayer implemented.</p>
+            </li>
+            <li>
+                <p>Shadow-mode wiring added behind ?observatoryMode=shadow.</p>
+            </li>
+            <li>
+                <p>Legacy ObservatoryDataLayer remains authoritative for UI output.</p>
+            </li>
+        </ul>
+        <h3>Current architecture state</h3>
+        <ul>
+            <li>
+                <p>Browser remains the canonical runtime.</p>
+            </li>
+            <li>
+                <p>Legacy ObservatoryDataLayer owns observatory UI output.</p>
+            </li>
+            <li>
+                <p>Candidate ObservatoryDataLayer receives observations only.</p>
+            </li>
+            <li>
+                <p>FrontendObservationAdapter.ingest() is the only candidate bridge.</p>
+            </li>
+            <li>
+                <p>finalizeExperience() still uses the legacy interaction count.</p>
+            </li>
+        </ul>
+        <h3>Files introduced/changed</h3>
+        <ul>
+            <li>
+                <p>projects/tars-face/observatory-data-layer-candidate.js</p>
+            </li>
+            <li>
+                <p>projects/tars-face/frontend-observation-adapter.js</p>
+            </li>
+            <li>
+                <p>projects/tars-face/test_observatory_candidate.mjs</p>
+            </li>
+            <li>
+                <p>projects/tars-face/tars_face_v1.html shadow wiring</p>
+            </li>
+            <li>
+                <p>projects/tars-face/Dockerfile packaging</p>
+            </li>
+        </ul>
+        <h3>Validation status</h3>
+        <p>Candidate tests, fixture parity, mutation protection, isolation checks, observatory regression (59/59), behavioral-memory tests, canonical-shell tests, shadow tests, syntax checks, diff checks, and local HTTP asset smoke tests all pass.</p>
+        <h3>Explicitly not done</h3>
+        <ul>
+            <li>
+                <p>No Pi deployment.</p>
+            </li>
+            <li>
+                <p>No diagnostic cutover.</p>
+            </li>
+            <li>
+                <p>No UI migration.</p>
+            </li>
+            <li>
+                <p>No authority movement.</p>
+            </li>
+            <li>
+                <p>Candidate mode is not enabled by default (shadow checkpoint only).</p>
+            </li>
+        </ul>
+        <h3>Next approved action</h3>
+        <ul>
+            <li>
+                <p>Review the diff.</p>
+            </li>
+            <li>
+                <p>Run ?observatoryMode=shadow manually.</p>
+            </li>
+            <li>
+                <p>Verify live candidate comparisons.</p>
+            </li>
+            <li>
+                <p>Preserve the legacy rollback path.</p>
+            </li>
+            <li>
+                <p>Consider diagnostic cutover only after evidence.</p>
+            </li>
+        </ul>
+        <h2>TARS Architectural Invariants</h2>
+        <ul>
+            <li>
+                <p>Browser runtime is canonical.</p>
+            </li>
+            <li>
+                <p>Pi runtime is observational.</p>
+            </li>
+            <li>
+                <p>Shadow systems never become authorities.</p>
+            </li>
+            <li>
+                <p>Candidate modules receive observations, never runtime objects.</p>
+            </li>
+            <li>
+                <p>New subsystems must prove parity before ownership transfer.</p>
+            </li>
+            <li>
+                <p>worldState ownership does not move casually.</p>
+            </li>
+            <li>
+                <p>Persistence has one writer.</p>
+            </li>
+            <li>
+                <p>Behavioral memory has one writer.</p>
+            </li>
+            <li>
+                <p>finalizeExperience() remains legacy-owned until its interaction-count dependency is explicitly migrated.</p>
+            </li>
+        </ul>
+        <h2>Next Objective</h2>
+        <p>Do not expand features yet. First stabilize the project truth layer:</p>
+        <ol>
+            <li>
+                <p>Keep tars-v9.3.2 immutable as the current release baseline.</p>
+            </li>
+            <li>
+                <p>Do not call master a release until tagged.</p>
+            </li>
+            <li>
+                <p>Record new work as forward-only commits and future versions.</p>
+            </li>
+            <li>
+                <p>Verify production on tars.local before making runtime claims.</p>
+            </li>
+            <li>
+                <p>Complete Phase 10.3.1 manual shadow validation before any diagnostic cutover; do not relocate authority or deploy canonical mode.<MadCap:snippetText src="Resources/Snippets/TEST SNIPPET.flsnp" /></p>
+            </li>
+        </ol>
+        <MadCap:snippetBlock src="Resources/Snippets/TEST SNIPPET.flsnp" />
+        <p>&#160;</p>
+    </body>
+</html>

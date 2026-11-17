@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <CatapultConditionTagSet>
   <ConditionTag
     Comment=""
@@ -17,7 +17,7 @@
     Name="Tablet"
     Comment="" />
   <ConditionTag
-    BackgroundColor="#8b008b"
+    BackgroundColor="#00ceff"
     Name="Mobile"
     Comment="" />
 </CatapultConditionTagSet>
