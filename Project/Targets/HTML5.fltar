@@ -9,7 +9,9 @@
   ResolveCssVariables="true"
   DefaultUrl="/Content/Amir_OS_README.htm"
   PatchHeadingLevels="true"
-  ConditionTagExpression="exclude[Default.Web]">
+  ConditionTagExpression="exclude[Default.Web]"
+  EquationsOutputType="PNG"
+  ContentInclusionType="Referenced">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"

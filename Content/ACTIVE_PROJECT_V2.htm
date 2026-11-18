@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head><title>ACTIVE_PROJECT_V2</title>
+    </head>
+    <body>
+        <h1>Current Priority</h1>
+        <p>TARS (projects/tars-face) — Phase 9.3 complete: frontend + backend (autonomy, world, physics, persistence, monitoring) deployed to the Pi node (tars_backend on :8080) and recovery-validated (container restart / daemon restart / Pi reboot / network loss / persistence). Next: Phase 9.4 — physical presence layer.</p>
+        <p>Project Breakdown</p>
+        <h2>1. TARS Face (projects/tars-face)</h2>
+        <p>Phases 1–8.5 ✅ — face, autonomy engine, world state, persistence, runtime server, observability, embodied interaction layer</p>
+        <p>Phase 9.1 ✅ — deployment artifacts (Dockerfile, compose, .dockerignore, local Three.js)</p>
+        <p>Phase 9.2 ✅ — deployed tars_backend on tars Pi :8080 (isolated tars_net)</p>
+        <p>Phase 9.3 ✅ — recovery validated via test-only phase</p>
+        <p>Next: Phase 9.4 — display detection, touchscreen validation, kiosk boot, auto TARS startup (display not yet attached)</p>
+        <h2>2. Home Lab</h2>
+        <p>Alarm Media Pi (192.168.0.103 - Arch Linux ARM) hosting Immich (:2283), Plex (:32400), Node-Exporter (:9100) on 2TB external SSD (/mnt/storage). TARS Pi (tars.local, 192.168.0.104, tars_backend :8080). TrueNAS / Lab OptiPlex (192.168.0.100), ER605 router, dual-subnet (10.0.0.0/24 WAN + 192.168.0.0/24 LAN). VNC to iMac (10.0.0.190).</p>
+        <h2>3. TSE-Production-Lab</h2>
+        <p>FastAPI + PostgreSQL homelab standalone (Workspace/TSE-Production-Lab/), container tse_fastapi_backend :8000 — unchanged by TARS deployment.</p>
+        <h1>Next Actions</h1>
+        <p>Phase 9.4: attach 7" display → verify detection → touch calibration → kiosk autostart → TARS auto-launch on boot</p>
+        <p>After: richer touch/world interaction (grab/knock/roll), camera/sensors when appropriate, deeper embodiment</p>
+        <h2>Key Files</h2>
+        <p>projects/tars-face/tars_face_v1.html — Single-file Three.js app</p>
+        <p>projects/tars-face/docs/ — CURRENT_STATE, PHASE_HISTORY, PHASE_9_1/9_2/9_3 reports</p>
+        <p>memory/*_v2.md — Consolidated memory (canonical)</p>
+    </body>
+</html>
