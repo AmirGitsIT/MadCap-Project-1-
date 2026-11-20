@@ -1,0 +1,456 @@
+﻿/*<meta />*/
+
+/* =======================================================
+   Amir_OS / MadCap Flare Stylesheet
+   Graphite + Silver Professional Theme
+   ======================================================= */
+
+
+/* =======================================================
+   1. Global Text and Layout
+   ======================================================= */
+
+body
+{
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.7em;
+    margin: 17px;
+    max-width: 750px;
+    color: #e6e7e8;
+    background-color: #0b0c0e;
+    background-image: url('../Images/4775470.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+/* =======================================================
+   2. Headings
+   ======================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-weight: bold;
+}
+
+h1
+{
+    position: relative;
+    font-size: 28px;
+    color: #e5e5e5;
+    background-image: linear-gradient(
+        120deg,
+        #62666b,
+        #a8acb0,
+        #f4f4f4,
+        #c5c8cb,
+        #777b80
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.10);
+    animation-name: lightSweep;
+    animation-duration: 6.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes lightSweep
+{
+    0%
+    {
+        background-position: 200% 0;
+    }
+
+    100%
+    {
+        background-position: -200% 0;
+    }
+}
+
+h2
+{
+    color: #e2e3e5;
+}
+
+h3
+{
+    color: #caccce;
+}
+
+h4,
+h5,
+h6
+{
+    color: #afb2b5;
+}
+
+
+/* =======================================================
+   3. Paragraphs and General Text
+   ======================================================= */
+
+p
+{
+    color: #e1e2e3;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+/* =======================================================
+   4. Acrylic Content Panels
+   ======================================================= */
+
+div.acrylic-block
+{
+    color: #e5e6e7;
+    background-color: rgba(18, 20, 23, 0.92);
+    border: solid 1px rgba(210, 214, 218, 0.16);
+    border-radius: 7px;
+    padding: 12px;
+    margin-bottom: 1.5em;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =======================================================
+   5. Example and Note Callouts
+   ======================================================= */
+
+p.example
+{
+    color: #e5e6e7;
+    border: solid 1px #62676c;
+    border-left: solid 3px #b8bcc0;
+    background-color: rgba(48, 51, 55, 0.92);
+    border-radius: 6px;
+    padding: 14px 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+p.note
+{
+    color: #eeeeef;
+    border: solid 1px #74787d;
+    border-left: solid 3px #dedfe0;
+    background-color: rgba(58, 61, 65, 0.92);
+    border-radius: 6px;
+    padding: 14px 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =======================================================
+   6. MadCap Interactive Elements
+   ======================================================= */
+
+MadCap|expanding
+{
+    mc-open-image: url('resources:Images/WebHelp/minus.png');
+    mc-closed-image: url('resources:Images/WebHelp/plus.png');
+    mc-image-position: left;
+}
+
+MadCap|dropDown
+{
+    mc-open-image: url('resources:Images/WebHelp/minus.png');
+    mc-closed-image: url('resources:Images/WebHelp/plus.png');
+}
+
+MadCap|toggler
+{
+    mc-open-image: url('resources:Images/WebHelp/minus.png');
+    mc-closed-image: url('resources:Images/WebHelp/plus.png');
+    color: inherit;
+}
+
+MadCap|popupHead
+{
+    color: #c8cbce;
+}
+
+MadCap|popupBody
+{
+    color: #e4e5e6;
+    border: solid 1px #4f5357;
+    background-color: #101113;
+    padding: 11px 15px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+}
+
+MadCap|glossaryTerm.Expanding
+{
+    color: inherit;
+    font-weight: inherit;
+}
+
+MadCap|glossaryTerm.Hyperlink
+{
+    color: #c8cbce;
+    font-weight: inherit;
+}
+
+MadCap|glossaryTerm.Popup
+{
+    color: #c8cbce;
+    font-weight: normal;
+}
+
+MadCap|conceptLink,
+MadCap|keywordLink,
+MadCap|relatedTopics
+{
+    color: #d9dbdd;
+}
+
+MadCap|helpControlMenu
+{
+    color: #d5d7d9;
+    background-color: #202225;
+    border: solid 1px #4f5357;
+}
+
+MadCap|helpControlMenuItem
+{
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+MadCap|helpControlMenuItem.Highlighted
+{
+    color: #ffffff;
+    background-color: #3a3d41;
+}
+
+
+/* =======================================================
+   7. Images
+   Responsive sizing and metallic framing
+   ======================================================= */
+
+img
+{
+    max-width: 100%;
+    height: auto;
+    border: solid 1px rgba(190, 194, 198, 0.38);
+    border-radius: 6px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.32);
+}
+
+img.screenshot
+{
+    display: block;
+    width: auto;
+    max-width: 700px;
+    height: auto;
+    margin: 20px auto;
+}
+
+p.Image
+{
+    text-align: center;
+}
+
+
+/* =======================================================
+   8. Accent Classes
+   ======================================================= */
+
+span.accentGold
+{
+    color: #d2d4d6;
+}
+
+span.accentCyan
+{
+    color: #aeb2b6;
+}
+
+span.accentSilver
+{
+    color: #c8cbce;
+}
+
+span.accentBright
+{
+    color: #f1f1f1;
+}
+
+span.accentMuted
+{
+    color: #969a9e;
+}
+
+
+/* =======================================================
+   9. Tables
+   ======================================================= */
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    color: #e5e6e7;
+    background-color: #141618;
+    border: solid 1px #64686d;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+}
+
+th
+{
+    color: #f0f0f0;
+    background-color: #4e5257;
+    border: solid 1px #696d72;
+    padding: 9px;
+    text-align: left;
+}
+
+td
+{
+    color: #dddddf;
+    border: solid 1px #505459;
+    padding: 8px;
+    background-color: #1c1e21;
+}
+
+caption
+{
+    color: #c9cccf;
+    font-weight: bold;
+    padding: 6px;
+}
+
+
+/* =======================================================
+   10. Links
+   ======================================================= */
+
+a
+{
+    color: #d4d6d8;
+    text-decoration: none;
+    position: relative;
+    border-bottom: solid 1px #787c80;
+    transition: color 250ms ease, border-color 250ms ease;
+}
+
+a:hover
+{
+    color: #ffffff;
+    border-bottom-color: #f3f3f3;
+}
+
+
+/* =======================================================
+   11. Lists
+   ======================================================= */
+
+ul,
+ol
+{
+    color: #e0e1e2;
+}
+
+li
+{
+    margin-bottom: 4px;
+}
+
+
+/* =======================================================
+   12. Text Selection
+   ======================================================= */
+
+::selection
+{
+    color: #ffffff;
+    background-color: #555a60;
+}
+
+
+/* =======================================================
+   13. Cross References
+   ======================================================= */
+
+MadCap|xref
+{
+    mc-format: '{title}';
+}
+
+
+/* =======================================================
+   14. Figure Captions
+   ======================================================= */
+
+p.Figure
+{
+    mc-auto-number-format: 'H: {b}FIGURE {n+}:{/b} ';
+    margin-top: 1em;
+}
+
+
+/* =======================================================
+   15. Print Medium
+   ======================================================= */
+
+@media print
+{
+    body
+    {
+        color: #000000;
+        background-color: #ffffff;
+        background-image: none;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    li
+    {
+        color: #000000;
+    }
+
+    h1
+    {
+        background-image: none;
+        -webkit-text-fill-color: #000000;
+        text-shadow: none;
+        animation: none;
+    }
+
+    a
+    {
+        color: #000000;
+        border-bottom: none;
+    }
+
+    img
+    {
+        max-width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    p.Figure
+    {
+        mc-auto-number-format: 'H: {b}FIGURE {chapnum}-{n+}:{/b} ';
+    }
+}

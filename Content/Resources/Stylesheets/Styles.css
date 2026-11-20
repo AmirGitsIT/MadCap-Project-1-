@@ -1,13 +1,15 @@
-/*<meta />*/
+﻿/*<meta />*/
 
 /* =======================================================
-   Amir_OS / MadCap Flare Stylesheet
-   Graphite + Silver Professional Theme
-   Dark Background + Acrylic Panels + Subtle Motion
+   Amir_OS - Base Stylesheet
+   Graphite + Silver Theme
+
+   CLEAN BASELINE
+   Background, typography, headings, links and images only.
    ======================================================= */
 
 /* =======================================================
-   1. Global Text & Layout
+   1. BODY
    ======================================================= */
 
 body
@@ -19,15 +21,15 @@ body
 	max-width: 750px;
 	color: #e6e7e8;
 	background-color: #0b0c0e;
-	background-image: url('file:///C:/Flare Projects/AmirTest1/Content/Resources/Images/4775470.webp');
+	background-image: url('../Images/4775470.webp');
+	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center center;
 	background-attachment: fixed;
-	background-position: center;
 }
 
 /* =======================================================
-   2. Headings
-   Graphite / Silver Theme
+   2. HEADINGS
    ======================================================= */
 
 h1,
@@ -40,45 +42,11 @@ h6
 	font-weight: bold;
 }
 
-/* Main animated metallic heading */
-
 h1
 {
-	position: relative;
-	font-weight: bold;
 	font-size: 28px;
-	background-image: linear-gradient(
-		120deg,
-		#62666b,
-		#a8acb0,
-		#f4f4f4,
-		#c5c8cb,
-		#777b80
-	);
-	background-size: 200% auto;
-	background-clip: text;
-	-webkit-background-clip: text;
-	color: transparent;
-	text-shadow: 0 1px 8px rgba(255,255,255,0.10);
-	animation: lightSweep 6.5s linear infinite;
+	color: #e5e5e5;
 }
-
-/* Metallic light sweep */
-
-@keyframes lightSweep
-{
-	0%
-	{
-		background-position: 200% 0;
-	}
-
-	100%
-	{
-		background-position: -200% 0;
-	}
-} 
-
-/* Secondary headings */
 
 h2
 {
@@ -98,278 +66,16 @@ h6
 }
 
 /* =======================================================
-   3. Paragraphs & General Text
+   3. PARAGRAPHS
    ======================================================= */
 
 p
 {
 	color: #e1e2e3;
-	padding: 5px;
-	border-radius: 5px;
-	background: none;
 }
 
 /* =======================================================
-   4. Acrylic / Frosted Content Panels
-   ======================================================= */
-
-.acrylic-block
-{
-	color: #e5e6e7;
-	background-color: rgba(18, 20, 23, 0.72);
-	border: 1px solid rgba(210, 214, 218, 0.16);
-	border-radius: 7px;
-	padding: 12px;
-	margin-bottom: 1.5em;
-	box-shadow: 0 4px 18px rgba(0,0,0,0.20), inset 0 1px 0 rgba(255,255,255,0.04);
-	backdrop-filter: blur(8px);
-	-webkit-backdrop-filter: blur(8px);
-}
-
-/* =======================================================
-   5. Example & Note Callouts
-   ======================================================= */
-
-/* Example
-   Cool graphite / silver */
-
-p.example
-{
-	color: #e5e6e7;
-	border: solid 1px #62676c;
-	border-left: solid 3px #b8bcc0;
-	background-color: rgba(48, 51, 55, 0.72);
-	border-radius: 6px;
-	padding: 14px 20px;
-	box-shadow: 0 3px 12px rgba(0,0,0,0.18);
-}
-
-/* Note
-   Slightly brighter silver accent */
-
-p.note
-{
-	color: #eeeeef;
-	border: solid 1px #74787d;
-	border-left: solid 3px #dedfe0;
-	background-color: rgba(58, 61, 65, 0.66);
-	border-radius: 6px;
-	padding: 14px 20px;
-	box-shadow: 0 3px 12px rgba(0,0,0,0.18);
-}
-
-/* =======================================================
-   6. MadCap Interactive Elements
-   ======================================================= */
-
-MadCap|expanding
-{
-	mc-open-image: url('resources:Images/WebHelp/minus.png');
-	mc-closed-image: url('resources:Images/WebHelp/plus.png');
-	mc-image-position: left;
-}
-
-MadCap|dropDown
-{
-	mc-open-image: url('resources:Images/WebHelp/minus.png');
-	mc-closed-image: url('resources:Images/WebHelp/plus.png');
-}
-
-MadCap|toggler
-{
-	mc-open-image: url('resources:Images/WebHelp/minus.png');
-	mc-closed-image: url('resources:Images/WebHelp/plus.png');
-	color: inherit;
-}
-
-MadCap|popupHead
-{
-	color: #c8cbce;
-}
-
-MadCap|popupBody
-{
-	color: #e4e5e6;
-	border: solid 1px #4f5357;
-	background-color: rgba(16, 17, 19, 0.94);
-	padding: 11px 15px;
-	box-shadow: 0 5px 18px rgba(0,0,0,0.35);
-}
-
-MadCap|glossaryTerm
-{
-	
-}
-
-MadCap|glossaryTerm.Expanding
-{
-	color: inherit;
-	font-weight: inherit;
-}
-
-MadCap|glossaryTerm.Hyperlink
-{
-	color: #c8cbce;
-	font-weight: inherit;
-}
-
-MadCap|glossaryTerm.Popup
-{
-	color: #c8cbce;
-	font-weight: normal;
-}
-
-MadCap|conceptLink,
-MadCap|keywordLink,
-MadCap|relatedTopics
-{
-	color: #d9dbdd;
-}
-
-MadCap|helpControlMenu
-{
-	color: #d5d7d9;
-	background-color: #202225;
-	border: solid 1px #4f5357;
-}
-
-MadCap|helpControlMenuItem
-{
-	color: inherit;
-	font-size: inherit;
-	font-family: inherit;
-}
-
-MadCap|helpControlMenuItem.Highlighted
-{
-	color: #ffffff;
-	background-color: #3a3d41;
-}
-
-/* =======================================================
-   7. Images
-   Restrained metallic framing
-   ======================================================= */
-
-img
-{
-	border: 1px solid rgba(190,194,198,0.38);
-	border-radius: 6px;
-	box-shadow: 0 4px 14px rgba(0,0,0,0.32), 0 0 8px rgba(220,220,220,0.06);
-}
-
-/* =======================================================
-   8. Accent Classes
-   ======================================================= */
-
-/* Existing class retained so older topics don't break */
-
-.accentGold
-{
-	color: #d2d4d6;
-}
-
-/* Existing class retained so older topics don't break */
-
-.accentCyan
-{
-	color: #aeb2b6;
-}
-
-/* New semantic silver accents */
-
-.accentSilver
-{
-	color: #c8cbce;
-}
-
-.accentBright
-{
-	color: #f1f1f1;
-}
-
-.accentMuted
-{
-	color: #969a9e;
-}
-
-/* =======================================================
-   9. Tables
-   Graphite + Silver
-   ======================================================= */
-
-table
-{
-	width: 100%;
-	border-collapse: collapse;
-	color: #e5e6e7;
-	background-color: rgba(20, 22, 24, 0.70);
-	border: 1px solid #64686d;
-	border-radius: 6px;
-	box-shadow: 0 4px 16px rgba(0,0,0,0.22);
-}
-
-th
-{
-	color: #f0f0f0;
-	background-color: rgba(78, 82, 87, 0.72);
-	border: 1px solid #696d72;
-	padding: 9px;
-	text-align: left;
-}
-
-td
-{
-	color: #dddddf;
-	border: 1px solid #505459;
-	padding: 8px;
-	background-color: rgba(28, 30, 33, 0.58);
-}
-
-caption
-{
-	color: #c9cccf;
-	font-weight: bold;
-	padding: 6px;
-}
-
-/* =======================================================
-   10. Animated Silver Underline for Links
-   ======================================================= */
-
-a
-{
-	color: #d4d6d8;
-	text-decoration: none;
-	position: relative;
-	background: linear-gradient(
-			to right,
-			rgba(120,124,128,0.75),
-			rgba(120,124,128,0.75)
-		), linear-gradient(
-			to right,
-			#777b80,
-			#f3f3f3,
-			#aeb2b6,
-			#f3f3f3,
-			#777b80
-		);
-	background-size: 100% 1px, 0 1px;
-	background-position: 100% 100%, 0 100%;
-	background-repeat: no-repeat;
-	transition: background-size 400ms ease, color 250ms ease;
-}
-
-/* Silver sweep animation on hover */
-
-a:hover
-{
-	color: #ffffff;
-	background-size: 0 1px, 100% 1px;
-}
-
-/* =======================================================
-   11. Lists
+   4. LISTS
    ======================================================= */
 
 ul,
@@ -384,28 +90,105 @@ li
 }
 
 /* =======================================================
-   12. Text Selection
-   Small premium-detail touch
+   5. LINKS
    ======================================================= */
 
-::selection
+a
+{
+	color: #d4d6d8;
+}
+
+a:hover
 {
 	color: #ffffff;
-	background-color: #555a60;
 }
 
 /* =======================================================
-   13. Reduced Motion
-   Accessibility
+   6. CROSS REFERENCES
    ======================================================= */
-
-@media 
-{
-	
-}
 
 MadCap|xref
 {
+	color: #d4d6d8;
 	mc-format: '{title}';
 }
 
+/* =======================================================
+   7. IMAGES
+   ======================================================= */
+
+img
+{
+	max-width: 100%;
+	height: auto;
+}
+
+/* =======================================================
+   8. PRINT BASELINE
+   ======================================================= */
+
+@media print
+{
+	body
+	{
+		color: #000000;
+		background-color: #ffffff;
+		background-image: none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	li
+	{
+		color: #000000;
+	}
+
+	a
+	{
+		color: #000000;
+	}
+
+	MadCap|xref
+	{
+		color: #000000;
+	}
+
+	img
+	{
+		max-width: 100%;
+		height: auto;
+	}
+
+	h1
+	{
+		mc-auto-number-format: 'CH:Chapter {chapnum}. ';
+	}
+
+	h2
+	{
+		mc-auto-number-format: 'CH:{chapnum}.{n+} ';
+	}
+
+	h3
+	{
+		mc-auto-number-format: 'CH:{chapnum}.{n}.{n+} ';
+	}
+
+	h1.h1contents
+	{
+		
+	}
+}
+
+h1.Contents
+{
+    mc-heading-level: 0;
+    mc-auto-number-format: "";
+}
