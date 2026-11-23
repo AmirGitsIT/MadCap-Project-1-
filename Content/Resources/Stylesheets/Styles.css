@@ -181,14 +181,182 @@ img
 		mc-auto-number-format: 'CH:{chapnum}.{n}.{n+} ';
 	}
 
-	h1.h1contents
+	h1.Neon
 	{
-		
+		color: #a9a9a9;
+		font-size: 36pt;
 	}
 }
 
 h1.Contents
 {
-    mc-heading-level: 0;
-    mc-auto-number-format: "";
+	mc-heading-level: 0;
+	mc-auto-number-format: "";
+}
+
+p.Image
+{
+	margin-bottom: 0;
+}
+
+p.Figure
+{
+	mc-auto-number-format: 'H: {b}FIGURE {n+}:{/b}';
+	margin-top: 0;
+}
+
+/* =======================================================
+   9. NEON H1
+   Flare Selector: h1.Neon
+
+   ELECTRIC TURQUOISE COLOR CONTROLS
+
+   Core/Text:       #eaffff
+   Light Glow:      #80fff1
+   Primary Glow:    #20e6d0
+   Strong Glow:     #00bfae
+   Deep Glow:       #007f78
+   Dim/Off Color:   #164a49
+
+   The h1.Neon selector remains selectable through Flare.
+   ======================================================= */
+
+h1.Neon
+{
+	color: #eaffff;
+	font-size: 36px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+
+	text-shadow:
+		0 0 6px #eaffff,
+		0 0 12px #80fff1,
+		0 0 20px #20e6d0,
+		0 0 30px #00bfae;
+
+	animation:
+		NeonShine 2s forwards,
+		NeonFlicker 5s 2s infinite;
+}
+
+
+/* =======================================================
+   10. NEON ANIMATIONS
+
+   These are not Flare selectors.
+
+   h1.Neon calls these animations by name through
+   the animation property above.
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   10A. NEON POWER-ON
+
+   Simulates the sign powering from a dim/off state
+   into the full electric turquoise glow.
+   ------------------------------------------------------- */
+
+@keyframes NeonShine
+{
+	0%
+	{
+		color: #164a49;
+		text-shadow: none;
+	}
+
+	35%
+	{
+		color: #20e6d0;
+
+		text-shadow:
+			0 0 4px #20e6d0,
+			0 0 10px #00bfae;
+	}
+
+	70%
+	{
+		color: #80fff1;
+
+		text-shadow:
+			0 0 6px #80fff1,
+			0 0 12px #20e6d0,
+			0 0 20px #00bfae;
+	}
+
+	100%
+	{
+		color: #eaffff;
+
+		text-shadow:
+			0 0 6px #eaffff,
+			0 0 12px #80fff1,
+			0 0 20px #20e6d0,
+			0 0 30px #00bfae;
+	}
+}
+
+
+/* -------------------------------------------------------
+   10B. NEON FLICKER
+
+   Creates an irregular-looking electrical flicker
+   without requiring JavaScript or changes to topic HTML.
+   ------------------------------------------------------- */
+
+@keyframes NeonFlicker
+{
+	0%,
+	17%,
+	19%,
+	22%,
+	24%,
+	52%,
+	55%,
+	72%,
+	75%,
+	100%
+	{
+		opacity: 1;
+	}
+
+	18%
+	{
+		opacity: 0.62;
+	}
+
+	20%
+	{
+		opacity: 0.9;
+	}
+
+	21%
+	{
+		opacity: 0.45;
+	}
+
+	23%
+	{
+		opacity: 0.82;
+	}
+
+	53%
+	{
+		opacity: 0.7;
+	}
+
+	54%
+	{
+		opacity: 0.95;
+	}
+
+	73%
+	{
+		opacity: 0.55;
+	}
+
+	74%
+	{
+		opacity: 0.9;
+	}
 }

@@ -6,7 +6,8 @@
   Destinations=""
   ShowMadCapBacklink="true"
   GlossaryTermConversion="marked"
-  PatchHeadingLevels="true">
+  PatchHeadingLevels="true"
+  MasterToc="/Project/TOCs/Primary.fltoc">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"
