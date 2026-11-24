@@ -8,6 +8,7 @@
    Background, typography, headings, links and images only.
    ======================================================= */
 
+
 /* =======================================================
    1. BODY
    ======================================================= */
@@ -27,6 +28,7 @@ body
 	background-position: center center;
 	background-attachment: fixed;
 }
+
 
 /* =======================================================
    2. HEADINGS
@@ -65,6 +67,7 @@ h6
 	color: #afb2b5;
 }
 
+
 /* =======================================================
    3. PARAGRAPHS
    ======================================================= */
@@ -73,6 +76,7 @@ p
 {
 	color: #e1e2e3;
 }
+
 
 /* =======================================================
    4. LISTS
@@ -89,6 +93,7 @@ li
 	margin-bottom: 4px;
 }
 
+
 /* =======================================================
    5. LINKS
    ======================================================= */
@@ -103,6 +108,7 @@ a:hover
 	color: #ffffff;
 }
 
+
 /* =======================================================
    6. CROSS REFERENCES
    ======================================================= */
@@ -113,6 +119,7 @@ MadCap|xref
 	mc-format: '{title}';
 }
 
+
 /* =======================================================
    7. IMAGES
    ======================================================= */
@@ -122,6 +129,7 @@ img
 	max-width: 100%;
 	height: auto;
 }
+
 
 /* =======================================================
    8. PRINT BASELINE
@@ -188,22 +196,26 @@ img
 	}
 }
 
+
 h1.Contents
 {
 	mc-heading-level: 0;
 	mc-auto-number-format: "";
 }
 
+
 p.Image
 {
 	margin-bottom: 0;
 }
+
 
 p.Figure
 {
 	mc-auto-number-format: 'H: {b}FIGURE {n+}:{/b}';
 	margin-top: 0;
 }
+
 
 /* =======================================================
    9. NEON H1
@@ -252,9 +264,6 @@ h1.Neon
 
 /* -------------------------------------------------------
    10A. NEON POWER-ON
-
-   Simulates the sign powering from a dim/off state
-   into the full electric turquoise glow.
    ------------------------------------------------------- */
 
 @keyframes NeonShine
@@ -299,9 +308,6 @@ h1.Neon
 
 /* -------------------------------------------------------
    10B. NEON FLICKER
-
-   Creates an irregular-looking electrical flicker
-   without requiring JavaScript or changes to topic HTML.
    ------------------------------------------------------- */
 
 @keyframes NeonFlicker
@@ -358,5 +364,479 @@ h1.Neon
 	74%
 	{
 		opacity: 0.9;
+	}
+}
+
+
+/* =======================================================
+   11. TARS STARTUP / LOADING SCREEN
+
+   HTML5 startup overlay used by TarsLanding.flmsp.
+
+   Designed conservatively for MadCap Flare.
+   No Flexbox is used.
+
+   All styles are isolated beneath #tars-loader.
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   11A. FULL-SCREEN OVERLAY
+   ------------------------------------------------------- */
+
+#tars-loader
+{
+	position: fixed;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 99999;
+
+	background-color: #000000;
+
+	opacity: 1;
+	visibility: visible;
+
+	transition:
+		opacity 0.8s ease,
+		visibility 0.8s ease;
+}
+
+
+/* -------------------------------------------------------
+   11B. HIDDEN STATE
+   ------------------------------------------------------- */
+
+#tars-loader.tars-loader-hidden
+{
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+
+
+/* -------------------------------------------------------
+   11C. STARTUP STATUS AREA
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-status
+{
+	position: absolute;
+
+	top: 14%;
+	left: 50%;
+
+	width: 600px;
+	margin-left: -300px;
+
+	text-align: center;
+
+	z-index: 10;
+}
+
+
+/* -------------------------------------------------------
+   11D. TARS WORDMARK
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-title
+{
+	margin: 0;
+
+	color: #eaffff;
+
+	font-family: Arial, sans-serif;
+	font-size: 52px;
+	font-weight: bold;
+
+	letter-spacing: 12px;
+	text-transform: uppercase;
+
+	opacity: 0;
+
+	text-shadow:
+		0 0 6px #eaffff,
+		0 0 12px #80fff1,
+		0 0 24px #20e6d0,
+		0 0 40px #00bfae;
+
+	-webkit-box-reflect:
+		below 2px linear-gradient(
+			transparent,
+			#000000
+		);
+
+	animation:
+		TarsTitleBoot 2s 0.8s forwards;
+}
+
+
+/* -------------------------------------------------------
+   11E. INITIALIZATION LABEL
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-init
+{
+	margin-top: 25px;
+	margin-bottom: 20px;
+
+	color: #80fff1;
+
+	font-family: "Courier New", monospace;
+	font-size: 14px;
+	font-weight: bold;
+
+	letter-spacing: 3px;
+
+	opacity: 0;
+
+	text-shadow:
+		0 0 6px #20e6d0;
+
+	animation:
+		TarsStatusAppear 1s 2s forwards;
+}
+
+
+/* -------------------------------------------------------
+   11F. STATUS MESSAGES
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-line
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	color: #9ea8a8;
+
+	font-family: "Courier New", monospace;
+	font-size: 12px;
+
+	letter-spacing: 1px;
+
+	opacity: 0;
+}
+
+
+/* Each line receives its own boot timing. */
+
+#tars-loader .tars-line-1
+{
+	animation:
+		TarsStatusAppear 0.6s 3s forwards;
+}
+
+#tars-loader .tars-line-2
+{
+	animation:
+		TarsStatusAppear 0.6s 4s forwards;
+}
+
+#tars-loader .tars-line-3
+{
+	animation:
+		TarsStatusAppear 0.6s 5s forwards;
+}
+
+#tars-loader .tars-line-4
+{
+	animation:
+		TarsStatusAppear 0.6s 6s forwards;
+}
+
+#tars-loader .tars-line-5
+{
+	animation:
+		TarsStatusAppear 0.6s 7s forwards;
+}
+
+
+/* -------------------------------------------------------
+   11G. ONLINE MESSAGE
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-online
+{
+	margin-top: 18px;
+
+	color: #eaffff;
+
+	font-family: "Courier New", monospace;
+	font-size: 16px;
+	font-weight: bold;
+
+	letter-spacing: 4px;
+
+	opacity: 0;
+
+	text-shadow:
+		0 0 5px #eaffff,
+		0 0 10px #80fff1,
+		0 0 20px #20e6d0;
+
+	animation:
+		TarsOnline 1s 8.2s forwards;
+}
+
+
+/* -------------------------------------------------------
+   11H. ANIMATION SURFACE
+
+   Cube remains separate from the status area.
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-surface
+{
+	position: absolute;
+
+	top: 62%;
+	left: 0;
+
+	width: 100%;
+
+	transform: rotate(-35deg);
+}
+
+
+/* -------------------------------------------------------
+   11I. MOVING TRACK
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-box
+{
+	position: relative;
+
+	left: -100px;
+
+	width: calc(100% + 400px);
+	height: 200px;
+
+	-webkit-box-reflect:
+		below 1px linear-gradient(
+			transparent,
+			#000000
+		);
+
+	animation:
+		TarsLoaderSurface 1.5s ease-in-out infinite;
+}
+
+
+/* -------------------------------------------------------
+   11J. ELECTRIC CUBE
+   ------------------------------------------------------- */
+
+#tars-loader .tars-loader-cube
+{
+	position: absolute;
+
+	left: 50%;
+	margin-left: -100px;
+
+	width: 200px;
+	height: 200px;
+
+	background-color: #20e6d0;
+
+	box-shadow:
+		0 0 5px #eaffff,
+		0 0 25px #80fff1,
+		0 0 50px #20e6d0,
+		0 0 100px #00bfae,
+		0 0 150px #007f78;
+
+	transform-origin: bottom right;
+
+	animation:
+		TarsLoaderCube 1.5s ease-in-out infinite;
+}
+
+
+/* =======================================================
+   12. TARS STARTUP ANIMATIONS
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   12A. TITLE POWER-ON
+   ------------------------------------------------------- */
+
+@keyframes TarsTitleBoot
+{
+	0%
+	{
+		opacity: 0;
+		color: #164a49;
+		text-shadow: none;
+	}
+
+	25%
+	{
+		opacity: 0.35;
+
+		text-shadow:
+			0 0 4px #20e6d0;
+	}
+
+	35%
+	{
+		opacity: 0.08;
+	}
+
+	45%
+	{
+		opacity: 0.7;
+
+		text-shadow:
+			0 0 8px #80fff1,
+			0 0 18px #20e6d0;
+	}
+
+	55%
+	{
+		opacity: 0.25;
+	}
+
+	70%
+	{
+		opacity: 1;
+
+		text-shadow:
+			0 0 6px #eaffff,
+			0 0 12px #80fff1,
+			0 0 24px #20e6d0,
+			0 0 40px #00bfae;
+	}
+
+	100%
+	{
+		opacity: 1;
+
+		text-shadow:
+			0 0 6px #eaffff,
+			0 0 12px #80fff1,
+			0 0 24px #20e6d0,
+			0 0 40px #00bfae;
+	}
+}
+
+
+/* -------------------------------------------------------
+   12B. STATUS LINE APPEARANCE
+   ------------------------------------------------------- */
+
+@keyframes TarsStatusAppear
+{
+	0%
+	{
+		opacity: 0;
+	}
+
+	100%
+	{
+		opacity: 1;
+	}
+}
+
+
+/* -------------------------------------------------------
+   12C. SYSTEM ONLINE
+   ------------------------------------------------------- */
+
+@keyframes TarsOnline
+{
+	0%
+	{
+		opacity: 0;
+	}
+
+	25%
+	{
+		opacity: 1;
+	}
+
+	40%
+	{
+		opacity: 0.3;
+	}
+
+	55%
+	{
+		opacity: 1;
+	}
+
+	70%
+	{
+		opacity: 0.6;
+	}
+
+	100%
+	{
+		opacity: 1;
+	}
+}
+
+
+/* -------------------------------------------------------
+   12D. SURFACE MOVEMENT
+   ------------------------------------------------------- */
+
+@keyframes TarsLoaderSurface
+{
+	0%
+	{
+		transform: translateX(0);
+	}
+
+	100%
+	{
+		transform: translateX(-200px);
+	}
+}
+
+
+/* -------------------------------------------------------
+   12E. CUBE ROLL
+   ------------------------------------------------------- */
+
+@keyframes TarsLoaderCube
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+
+	60%,
+	70%,
+	80%,
+	100%
+	{
+		transform: rotate(90deg);
+	}
+
+	65%
+	{
+		transform: rotate(85deg);
+	}
+
+	75%
+	{
+		transform: rotate(87.5deg);
+	}
+}
+
+
+/* =======================================================
+   13. PRINT SAFETY
+   ======================================================= */
+
+@media print
+{
+	#tars-loader
+	{
+		display: none;
 	}
 }

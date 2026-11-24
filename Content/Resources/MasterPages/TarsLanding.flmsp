@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
+    </head>
+	<body>
+		<div id="tars-loader">
+
+			<div class="tars-loader-status">
+
+				<p class="tars-loader-title">TARS</p>
+
+				<p class="tars-loader-init">
+					INITIALIZING KNOWLEDGE ARCHITECTURE
+				</p>
+
+				<p class="tars-loader-line tars-line-1">
+					&gt; Loading knowledge engine...
+				</p>
+
+				<p class="tars-loader-line tars-line-2">
+					&gt; Mapping knowledge nodes...
+				</p>
+
+				<p class="tars-loader-line tars-line-3">
+					&gt; Establishing system interface...
+				</p>
+
+				<p class="tars-loader-line tars-line-4">
+					&gt; Initializing search architecture...
+				</p>
+
+				<p class="tars-loader-line tars-line-5">
+					&gt; Validating knowledge base...
+				</p>
+
+				<p class="tars-loader-online">
+					KNOWLEDGE CORE ONLINE
+				</p>
+
+			</div>
+
+			<div class="tars-loader-surface">
+				<div class="tars-loader-box">
+					<div class="tars-loader-cube">
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<MadCap:bodyProxy />
+
+		<script type="text/javascript">
+			window.addEventListener('load', function ()
+			{
+			var loader = document.getElementById('tars-loader');
+
+			if (!loader)
+			{
+			return;
+			}
+
+			window.setTimeout(function ()
+			{
+			loader.classList.add('tars-loader-hidden');
+			}, 10000);
+			});
+		</script>
+	</body>
+</html>
