@@ -3,7 +3,7 @@
     <head>
         <link href="../Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
     </head>
-	<body>
+	<body class="tars-home-body">
 		<div id="tars-loader">
 
 			<div class="tars-loader-status">
@@ -50,7 +50,7 @@
 		</div>
 
 		<MadCap:bodyProxy />
-
+		
 		<script type="text/javascript">
 			window.addEventListener('load', function ()
 			{
@@ -61,11 +61,23 @@
 			return;
 			}
 
+			/* Has the TARS startup already run during this session? */
+			if (sessionStorage.getItem('tarsStartupShown') === 'true')
+			{
+			loader.style.display = 'none';
+			return;
+			}
+
+			/* Mark the startup as shown for this browser session. */
+			sessionStorage.setItem('tarsStartupShown', 'true');
+
+			/* Allow the complete TARS startup sequence to run. */
 			window.setTimeout(function ()
 			{
 			loader.classList.add('tars-loader-hidden');
 			}, 10000);
 			});
 		</script>
+		
 	</body>
 </html>

@@ -7,7 +7,7 @@
   ShowMadCapBacklink="true"
   GlossaryTermConversion="marked"
   ResolveCssVariables="true"
-  DefaultUrl="/Content/Amir_OS_README.htm"
+  DefaultUrl="/Content/START_HERE.htm"
   PatchHeadingLevels="true"
   ConditionTagExpression="exclude[Default.Web]"
   EquationsOutputType="PNG"

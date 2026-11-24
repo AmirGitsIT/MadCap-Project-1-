@@ -840,3 +840,1216 @@ h1.Neon
 		display: none;
 	}
 }
+
+/* =======================================================
+   14. TARS HOME / LANDING PAGE
+
+   Used only by TARS-Home.htm.
+
+   All landing-page selectors are isolated beneath
+   .tars-home to avoid affecting normal KB topics.
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   14A. LANDING PAGE CONTAINER
+   ------------------------------------------------------- */
+
+.tars-home
+{
+	position: relative;
+
+	width: 1100px;
+	max-width: 100%;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	padding-top: 60px;
+	padding-bottom: 50px;
+
+	font-family: Arial, sans-serif;
+	color: #e6e7e8;
+}
+
+
+/* -------------------------------------------------------
+   14B. HERO AREA
+   ------------------------------------------------------- */
+
+.tars-home .tars-home-hero
+{
+	position: relative;
+
+	padding-top: 35px;
+	padding-right: 40px;
+	padding-bottom: 45px;
+	padding-left: 40px;
+
+	margin-bottom: 30px;
+
+	text-align: center;
+
+	background-color: rgba(5, 10, 12, 0.88);
+
+	border-top: 1px solid #164a49;
+	border-right: 1px solid #164a49;
+	border-bottom: 1px solid #164a49;
+	border-left: 1px solid #164a49;
+
+	box-shadow:
+		0 0 10px rgba(32, 230, 208, 0.08),
+		inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+
+/* -------------------------------------------------------
+   14C. HERO EYEBROW
+   ------------------------------------------------------- */
+
+.tars-home .tars-home-eyebrow
+{
+	margin-top: 0;
+	margin-bottom: 16px;
+
+	color: #788988;
+
+	font-family: "Courier New", monospace;
+	font-size: 11px;
+
+	letter-spacing: 5px;
+	text-transform: uppercase;
+}
+
+
+/* -------------------------------------------------------
+   14D. MAIN TARS WORDMARK
+   ------------------------------------------------------- */
+
+.tars-home .tars-home-title
+{
+	margin-top: 0;
+	margin-bottom: 15px;
+
+	color: #eaffff;
+
+	font-size: 64px;
+	line-height: 1em;
+
+	letter-spacing: 16px;
+	text-transform: uppercase;
+
+	text-shadow:
+		0 0 6px #eaffff,
+		0 0 12px #80fff1,
+		0 0 22px #20e6d0,
+		0 0 36px #00bfae;
+
+	animation:
+		TarsHomePulse 6s ease-in-out infinite;
+}
+
+
+/* -------------------------------------------------------
+   14E. HERO DESCRIPTION
+   ------------------------------------------------------- */
+
+.tars-home .tars-home-subtitle
+{
+	width: 700px;
+	max-width: 90%;
+
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 22px;
+	margin-left: auto;
+
+	color: #aeb8b8;
+
+	font-size: 14px;
+	line-height: 1.8em;
+}
+
+
+/* -------------------------------------------------------
+   14F. SYSTEM STATUS
+   ------------------------------------------------------- */
+
+.tars-home .tars-home-status
+{
+	margin-top: 0;
+	margin-bottom: 0;
+
+	color: #80fff1;
+
+	font-family: "Courier New", monospace;
+	font-size: 11px;
+
+	letter-spacing: 2px;
+
+	text-shadow:
+		0 0 7px rgba(32, 230, 208, 0.7);
+}
+
+.tars-home .tars-status-light
+{
+	color: #20e6d0;
+
+	text-shadow:
+		0 0 5px #20e6d0,
+		0 0 12px #00bfae;
+
+	animation:
+		TarsStatusPulse 2s ease-in-out infinite;
+}
+
+
+/* -------------------------------------------------------
+   14G. ELECTRIC DIVIDER
+   ------------------------------------------------------- */
+
+.tars-home .tars-home-divider
+{
+	width: 70%;
+	height: 1px;
+
+	margin-top: 30px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+
+	background-color: #20e6d0;
+
+	box-shadow:
+		0 0 4px #20e6d0,
+		0 0 12px #00bfae;
+}
+
+
+/* =======================================================
+   15. TARS MODULE GRID
+   ======================================================= */
+
+.tars-home .tars-module-grid
+{
+	position: relative;
+
+	width: 100%;
+
+	font-size: 0;
+}
+
+
+/* -------------------------------------------------------
+   15A. MODULE CARD
+
+   Inline-block is being used instead of CSS Grid/Flexbox
+   to remain conservative with Flare's CSS parser.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module
+{
+	position: relative;
+
+	display: inline-block;
+	vertical-align: top;
+
+	width: 48%;
+	min-height: 260px;
+
+	margin-right: 2%;
+	margin-bottom: 24px;
+
+	padding-top: 25px;
+	padding-right: 28px;
+	padding-bottom: 25px;
+	padding-left: 28px;
+
+	box-sizing: border-box;
+
+	overflow: hidden;
+
+	background-color: rgba(7, 11, 13, 0.92);
+
+	border-top: 1px solid #253938;
+	border-right: 1px solid #253938;
+	border-bottom: 1px solid #253938;
+	border-left: 3px solid #164a49;
+
+	box-shadow:
+		inset 0 0 30px rgba(0, 0, 0, 0.8),
+		0 0 10px rgba(32, 230, 208, 0.04);
+
+	font-size: 13px;
+
+	transition:
+		border-color 0.35s ease,
+		box-shadow 0.35s ease,
+		background-color 0.35s ease;
+}
+
+
+/* -------------------------------------------------------
+   15B. CARD HOVER STATE
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:hover
+{
+	background-color: rgba(8, 17, 18, 0.96);
+
+	border-top-color: #20e6d0;
+	border-right-color: #20e6d0;
+	border-bottom-color: #20e6d0;
+	border-left-color: #20e6d0;
+
+	box-shadow:
+		0 0 8px rgba(32, 230, 208, 0.2),
+		0 0 20px rgba(0, 191, 174, 0.12),
+		inset 0 0 35px rgba(0, 0, 0, 0.85);
+}
+
+
+/* -------------------------------------------------------
+   15C. PRIMARY MODULE
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-primary
+{
+	border-left-color: #20e6d0;
+
+	box-shadow:
+		0 0 12px rgba(32, 230, 208, 0.14),
+		inset 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+
+/* -------------------------------------------------------
+   15D. MODULE NUMBER / CLASSIFICATION
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-number
+{
+	margin-top: 0;
+	margin-bottom: 15px;
+
+	color: #607372;
+
+	font-family: "Courier New", monospace;
+	font-size: 10px;
+
+	letter-spacing: 2px;
+}
+
+
+/* -------------------------------------------------------
+   15E. MODULE TITLE
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-title
+{
+	margin-top: 0;
+	margin-bottom: 15px;
+
+	color: #dffdf9;
+
+	font-size: 20px;
+
+	letter-spacing: 2px;
+
+	text-shadow:
+		0 0 7px rgba(32, 230, 208, 0.34);
+}
+
+
+/* -------------------------------------------------------
+   15F. MODULE DESCRIPTION
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-description
+{
+	min-height: 80px;
+
+	margin-top: 0;
+	margin-bottom: 18px;
+
+	color: #a5afaf;
+
+	font-size: 12px;
+	line-height: 1.65em;
+}
+
+
+/* -------------------------------------------------------
+   15G. MODULE STATE
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-state
+{
+	margin-top: 0;
+	margin-bottom: 15px;
+
+	color: #20e6d0;
+
+	font-family: "Courier New", monospace;
+	font-size: 10px;
+
+	letter-spacing: 1px;
+}
+
+
+/* -------------------------------------------------------
+   15H. MODULE ACTION
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-action
+{
+	margin-top: 18px;
+	margin-bottom: 0;
+
+	font-family: "Courier New", monospace;
+	font-size: 11px;
+	font-weight: bold;
+
+	letter-spacing: 1px;
+}
+
+
+/* -------------------------------------------------------
+   15I. ACTIVE MODULE LINK
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-action a
+{
+	display: block;
+
+	padding-top: 10px;
+	padding-right: 12px;
+	padding-bottom: 10px;
+	padding-left: 12px;
+
+	color: #eaffff;
+
+	text-decoration: none;
+
+	background-color: rgba(32, 230, 208, 0.06);
+
+	border-top: 1px solid #164a49;
+	border-right: 1px solid #164a49;
+	border-bottom: 1px solid #164a49;
+	border-left: 1px solid #164a49;
+
+	transition:
+		color 0.25s ease,
+		background-color 0.25s ease,
+		border-color 0.25s ease,
+		box-shadow 0.25s ease;
+}
+
+.tars-home .tars-module-action a:hover
+{
+	color: #ffffff;
+
+	background-color: rgba(32, 230, 208, 0.14);
+
+	border-color: #20e6d0;
+
+	box-shadow:
+		0 0 8px rgba(32, 230, 208, 0.3),
+		inset 0 0 12px rgba(32, 230, 208, 0.08);
+}
+
+
+/* -------------------------------------------------------
+   15J. DISABLED MODULE ACTION
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-disabled
+{
+	color: #536362;
+}
+
+
+/* =======================================================
+   16. TARS HOME FOOTER
+   ======================================================= */
+
+.tars-home .tars-home-footer
+{
+	clear: both;
+
+	margin-top: 10px;
+	padding-top: 20px;
+
+	border-top: 1px solid #223332;
+
+	text-align: center;
+}
+
+.tars-home .tars-home-footer p
+{
+	margin-top: 4px;
+	margin-bottom: 4px;
+
+	color: #526160;
+
+	font-family: "Courier New", monospace;
+	font-size: 9px;
+
+	letter-spacing: 2px;
+}
+
+
+/* =======================================================
+   17. TARS HOME ANIMATION
+   ======================================================= */
+
+@keyframes TarsHomePulse
+{
+	0%,
+	100%
+	{
+		text-shadow:
+			0 0 6px #eaffff,
+			0 0 12px #80fff1,
+			0 0 22px #20e6d0,
+			0 0 36px #00bfae;
+	}
+
+	50%
+	{
+		text-shadow:
+			0 0 4px #eaffff,
+			0 0 9px #80fff1,
+			0 0 16px #20e6d0,
+			0 0 25px #00bfae;
+	}
+}
+
+
+@keyframes TarsStatusPulse
+{
+	0%,
+	100%
+	{
+		opacity: 1;
+	}
+
+	50%
+	{
+		opacity: 0.4;
+	}
+}
+
+
+/* =======================================================
+   18. TARS HOME SMALL-SCREEN FALLBACK
+   ======================================================= */
+
+@media screen and (max-width: 800px)
+{
+	.tars-home
+	{
+		width: auto;
+
+		padding-top: 25px;
+		padding-right: 15px;
+		padding-bottom: 30px;
+		padding-left: 15px;
+	}
+
+	.tars-home .tars-home-hero
+	{
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	.tars-home .tars-home-title
+	{
+		font-size: 44px;
+		letter-spacing: 10px;
+	}
+
+	.tars-home .tars-module
+	{
+		display: block;
+
+		width: 100%;
+		min-height: 0;
+
+		margin-right: 0;
+		margin-bottom: 18px;
+	}
+}
+
+
+/* =======================================================
+   19. TARS HOME PRINT SAFETY
+   ======================================================= */
+
+@media print
+{
+	.tars-home
+	{
+		display: none;
+	}
+}
+
+/* =======================================================
+   20. TARS PORTAL - FULL CANVAS
+
+   Used only by TARS-Home.htm.
+
+   Removes the normal Amir_OS article width restriction
+   and turns the TARS portal into a centered wide-screen
+   experience.
+
+   Normal KB topics remain unchanged.
+   ======================================================= */
+
+body.tars-home-body
+{
+	width: auto;
+	max-width: none;
+
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+
+	padding-top: 0;
+	padding-right: 40px;
+	padding-bottom: 0;
+	padding-left: 40px;
+
+	color: #e6e7e8;
+
+	background-color: #090b0c;
+	background-image: url('../Images/4775470.webp');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+
+/* Main TARS interface canvas */
+
+body.tars-home-body .tars-home
+{
+	position: relative;
+
+	width: 1200px;
+	max-width: 100%;
+
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+
+	padding-top: 55px;
+	padding-bottom: 60px;
+}
+
+
+/* Increase hero presence on the portal */
+
+body.tars-home-body .tars-home-hero
+{
+	width: 100%;
+
+	box-sizing: border-box;
+
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+/* Maintain a balanced two-column module layout */
+
+body.tars-home-body .tars-module
+{
+	width: 49%;
+
+	margin-right: 2%;
+}
+
+
+/* Remove the extra right margin from every second card */
+
+body.tars-home-body .tars-module:nth-child(2),
+body.tars-home-body .tars-module:nth-child(4)
+{
+	margin-right: 0;
+}
+
+
+/* =======================================================
+   20A. TARS PORTAL - LARGE DISPLAY
+   ======================================================= */
+
+@media screen and (min-width: 1400px)
+{
+	body.tars-home-body .tars-home
+	{
+		width: 1280px;
+	}
+
+	body.tars-home-body .tars-home-title
+	{
+		font-size: 72px;
+	}
+
+	body.tars-home-body .tars-module
+	{
+		min-height: 285px;
+	}
+}
+
+
+/* =======================================================
+   20B. TARS PORTAL - SMALL DISPLAY
+   ======================================================= */
+
+@media screen and (max-width: 800px)
+{
+	body.tars-home-body
+	{
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	body.tars-home-body .tars-home
+	{
+		width: auto;
+
+		padding-top: 25px;
+		padding-bottom: 30px;
+	}
+
+	body.tars-home-body .tars-module
+	{
+		display: block;
+
+		width: 100%;
+
+		margin-right: 0;
+		margin-bottom: 18px;
+	}
+}
+
+/* =======================================================
+   22. TARS MODULE - LIVE SYSTEM BACKGROUNDS
+
+   Pure CSS animated subsystem effects.
+   No video or external media required.
+
+   Designed around the existing .tars-module cards.
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   22A. BASE LIVE MODULE
+   ------------------------------------------------------- */
+
+.tars-home .tars-module
+{
+	position: relative;
+	overflow: hidden;
+
+	background-color: #05090b;
+	background-image:
+		linear-gradient(
+			120deg,
+			rgba(0, 0, 0, 0.96) 0%,
+			rgba(5, 15, 16, 0.92) 45%,
+			rgba(9, 35, 34, 0.55) 100%
+		);
+
+	box-shadow:
+		inset 0 0 50px rgba(0, 0, 0, 0.95),
+		inset -30px 0 60px rgba(0, 127, 120, 0.08),
+		0 0 10px rgba(32, 230, 208, 0.08);
+}
+
+
+/* -------------------------------------------------------
+   22B. INTERNAL SCANNING LIGHT
+
+   An oversized translucent plane moves across each card.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:before
+{
+	content: "";
+
+	position: absolute;
+
+	top: -80%;
+	left: -40%;
+
+	width: 45%;
+	height: 260%;
+
+	background-image:
+		linear-gradient(
+			90deg,
+			transparent,
+			rgba(32, 230, 208, 0.02),
+			rgba(128, 255, 241, 0.16),
+			rgba(32, 230, 208, 0.03),
+			transparent
+		);
+
+	transform: rotate(18deg);
+
+	animation:
+		TarsModuleSweep 8s linear infinite;
+
+	pointer-events: none;
+}
+
+
+/* -------------------------------------------------------
+   22C. DEPTH / DATA FIELD
+
+   A second layer creates faint moving structural lines.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:after
+{
+	content: "";
+
+	position: absolute;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background-image:
+		linear-gradient(
+			0deg,
+			transparent 0%,
+			transparent 48%,
+			rgba(32, 230, 208, 0.05) 49%,
+			rgba(32, 230, 208, 0.05) 50%,
+			transparent 51%,
+			transparent 100%
+		);
+
+	background-size: 100% 24px;
+
+	opacity: 0.7;
+
+	animation:
+		TarsDataDrift 10s linear infinite;
+
+	pointer-events: none;
+}
+
+
+/* -------------------------------------------------------
+   22D. KEEP CARD CONTENT ABOVE EFFECTS
+   ------------------------------------------------------- */
+
+.tars-home .tars-module-number,
+.tars-home .tars-module-title,
+.tars-home .tars-module-description,
+.tars-home .tars-module-state,
+.tars-home .tars-module-action
+{
+	position: relative;
+	z-index: 5;
+}
+
+
+/* =======================================================
+   23. INDIVIDUAL MODULE PERSONALITIES
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   MODULE 01 - KNOWLEDGE CORE
+
+   Brightest and most active because this is the primary
+   portal into the documentation system.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(1)
+{
+	background-image:
+		radial-gradient(
+			circle at 82% 50%,
+			rgba(32, 230, 208, 0.22),
+			rgba(0, 127, 120, 0.08) 20%,
+			transparent 48%
+		),
+		linear-gradient(
+			120deg,
+			#040708 0%,
+			#071011 62%,
+			#09201f 100%
+		);
+
+	animation:
+		TarsCoreBreath 6s ease-in-out infinite;
+}
+
+
+/* -------------------------------------------------------
+   MODULE 02 - SYSTEM ARCHIVE
+
+   Vertical repository / server-bank feeling.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(2)
+{
+	background-image:
+		repeating-linear-gradient(
+			90deg,
+			rgba(32, 230, 208, 0.00) 0px,
+			rgba(32, 230, 208, 0.00) 42px,
+			rgba(32, 230, 208, 0.07) 43px,
+			rgba(32, 230, 208, 0.00) 44px
+		),
+		linear-gradient(
+			135deg,
+			#040708,
+			#071212 65%,
+			#092423
+		);
+
+	background-size:
+		110% 100%,
+		100% 100%;
+
+	animation:
+		TarsArchiveShift 14s ease-in-out infinite;
+}
+
+
+/* -------------------------------------------------------
+   MODULE 03 - RANDOM ACCESS MEMORY
+
+   Layered diagonal memory-stream aesthetic.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(3)
+{
+	background-image:
+		repeating-linear-gradient(
+			135deg,
+			transparent 0px,
+			transparent 18px,
+			rgba(32, 230, 208, 0.035) 19px,
+			transparent 20px
+		),
+		radial-gradient(
+			circle at 75% 45%,
+			rgba(128, 255, 241, 0.12),
+			transparent 38%
+		),
+		linear-gradient(
+			125deg,
+			#040708,
+			#071111
+		);
+
+	background-size:
+		140% 140%,
+		100% 100%,
+		100% 100%;
+
+	animation:
+		TarsMemoryDrift 12s linear infinite;
+}
+
+
+/* -------------------------------------------------------
+   MODULE 04 - ACTIVE SYSTEMS
+
+   More energetic operational/radar appearance.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(4)
+{
+	background-image:
+		radial-gradient(
+			circle at 82% 50%,
+			transparent 0%,
+			transparent 13%,
+			rgba(32, 230, 208, 0.12) 14%,
+			transparent 15%,
+			transparent 25%,
+			rgba(32, 230, 208, 0.07) 26%,
+			transparent 27%,
+			transparent 100%
+		),
+		linear-gradient(
+			120deg,
+			#040708,
+			#071313 65%,
+			#09201f
+		);
+
+	background-size:
+		110% 110%,
+		100% 100%;
+
+	animation:
+		TarsOperationsPulse 5s ease-in-out infinite;
+}
+
+
+/* =======================================================
+   24. MODULE MOTION
+   ======================================================= */
+
+
+/* Traveling light plane */
+
+@keyframes TarsModuleSweep
+{
+	0%
+	{
+		left: -60%;
+		opacity: 0;
+	}
+
+	15%
+	{
+		opacity: 1;
+	}
+
+	55%
+	{
+		opacity: 0.85;
+	}
+
+	75%
+	{
+		left: 130%;
+		opacity: 0;
+	}
+
+	100%
+	{
+		left: 130%;
+		opacity: 0;
+	}
+}
+
+
+/* Slowly moving scan/data field */
+
+@keyframes TarsDataDrift
+{
+	0%
+	{
+		background-position: 0 0;
+	}
+
+	100%
+	{
+		background-position: 0 120px;
+	}
+}
+
+
+/* Knowledge core breath */
+
+@keyframes TarsCoreBreath
+{
+	0%,
+	100%
+	{
+		box-shadow:
+			inset 0 0 50px rgba(0, 0, 0, 0.95),
+			inset -30px 0 60px rgba(0, 127, 120, 0.10),
+			0 0 10px rgba(32, 230, 208, 0.10);
+	}
+
+	50%
+	{
+		box-shadow:
+			inset 0 0 40px rgba(0, 0, 0, 0.90),
+			inset -40px 0 80px rgba(32, 230, 208, 0.17),
+			0 0 18px rgba(32, 230, 208, 0.20);
+	}
+}
+
+
+/* Archive repository motion */
+
+@keyframes TarsArchiveShift
+{
+	0%,
+	100%
+	{
+		background-position:
+			0 0,
+			0 0;
+	}
+
+	50%
+	{
+		background-position:
+			24px 0,
+			0 0;
+	}
+}
+
+
+/* Memory-layer drift */
+
+@keyframes TarsMemoryDrift
+{
+	0%
+	{
+		background-position:
+			0 0,
+			0 0,
+			0 0;
+	}
+
+	100%
+	{
+		background-position:
+			80px -80px,
+			0 0,
+			0 0;
+	}
+}
+
+
+/* Operational energy pulse */
+
+@keyframes TarsOperationsPulse
+{
+	0%,
+	100%
+	{
+		background-size:
+			105% 105%,
+			100% 100%;
+	}
+
+	50%
+	{
+		background-size:
+			125% 125%,
+			100% 100%;
+	}
+}
+
+
+/* =======================================================
+   25. ENHANCED LIVE HOVER
+   ======================================================= */
+
+.tars-home .tars-module:hover
+{
+	border-top-color: #20e6d0;
+	border-right-color: #20e6d0;
+	border-bottom-color: #20e6d0;
+	border-left-color: #80fff1;
+
+	box-shadow:
+		inset 0 0 45px rgba(0, 0, 0, 0.82),
+		inset -35px 0 70px rgba(32, 230, 208, 0.10),
+		0 0 8px rgba(32, 230, 208, 0.30),
+		0 0 24px rgba(0, 191, 174, 0.18);
+}
+
+
+/* Make module title wake up on hover */
+
+.tars-home .tars-module:hover .tars-module-title
+{
+	color: #ffffff;
+
+	text-shadow:
+		0 0 5px #eaffff,
+		0 0 10px #80fff1,
+		0 0 18px #20e6d0;
+}
+
+
+/* =======================================================
+   26. TARS MODULE - ASYNCHRONOUS LIGHT SWEEPS
+
+   Breaks synchronization between subsystem cards.
+
+   Each module has:
+   - different sweep duration
+   - different starting delay
+   - slightly different light intensity
+   ======================================================= */
+
+
+/* -------------------------------------------------------
+   MODULE 01 - KNOWLEDGE BASE
+
+   Most active subsystem.
+   Sweep approximately every 7.5 seconds.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(1):before
+{
+	animation:
+		TarsModuleSweep 7.5s linear infinite;
+
+	animation-delay: -1.2s;
+}
+
+
+/* -------------------------------------------------------
+   MODULE 02 - SYSTEM ARCHIVE
+
+   Slower, heavier archive sweep.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(2):before
+{
+	animation:
+		TarsModuleSweep 11.5s linear infinite;
+
+	animation-delay: -6.7s;
+
+	opacity: 0.75;
+}
+
+
+/* -------------------------------------------------------
+   MODULE 03 - RANDOM ACCESS MEMORY
+
+   Faster and less predictable visually.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(3):before
+{
+	animation:
+		TarsModuleSweep 9.25s linear infinite;
+
+	animation-delay: -3.8s;
+
+	opacity: 0.88;
+}
+
+
+/* -------------------------------------------------------
+   MODULE 04 - ACTIVE SYSTEMS
+
+   Slow operational scanner.
+   ------------------------------------------------------- */
+
+.tars-home .tars-module:nth-child(4):before
+{
+	animation:
+		TarsModuleSweep 13.75s linear infinite;
+
+	animation-delay: -9.4s;
+
+	opacity: 0.82;
+}
+
