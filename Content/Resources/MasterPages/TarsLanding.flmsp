@@ -1,14 +1,180 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
-    <head>
-        <link href="../Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
-    </head>
+	<head>
+		<link href="../Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
+	</head>
+
 	<body class="tars-home-body">
+
+		<!-- =====================================================
+		LIQUID GLASS DISTORTION FILTERS
+
+		Each subsystem has independent glass distortion.
+
+		Displacement has been reduced from the previous
+		82-88 range so the subsystem scenes remain readable
+		while retaining obvious liquid refraction.
+		===================================================== -->
+
+		<svg width="0" height="0" style="position: absolute;">
+			<defs>
+
+
+				<!-- =================================================
+				MODULE 01 - KNOWLEDGE BASE
+				Balanced liquid refraction
+				================================================= -->
+
+				<filter id="tars-glass-knowledge"
+					x="-100%"
+					y="-100%"
+					width="300%"
+					height="300%"
+					filterUnits="objectBoundingBox"
+					primitiveUnits="userSpaceOnUse">
+
+					<feTurbulence
+						type="fractalNoise"
+						baseFrequency="0.012 0.012"
+						numOctaves="2"
+						seed="92"
+					result="knowledge-noise" />
+
+					<feGaussianBlur
+						in="knowledge-noise"
+						stdDeviation="2"
+					result="knowledge-blur" />
+
+					<feDisplacementMap
+						in="SourceGraphic"
+						in2="knowledge-blur"
+						scale="60"
+						xChannelSelector="R"
+					yChannelSelector="G" />
+
+				</filter>
+
+
+				<!-- =================================================
+				MODULE 02 - SYSTEM ARCHIVE
+				Calmer architectural glass
+				================================================= -->
+
+				<filter id="tars-glass-archive"
+					x="-100%"
+					y="-100%"
+					width="300%"
+					height="300%"
+					filterUnits="objectBoundingBox"
+					primitiveUnits="userSpaceOnUse">
+
+					<feTurbulence
+						type="fractalNoise"
+						baseFrequency="0.010 0.014"
+						numOctaves="2"
+						seed="137"
+					result="archive-noise" />
+
+					<feGaussianBlur
+						in="archive-noise"
+						stdDeviation="1.2"
+					result="archive-blur" />
+
+					<feDisplacementMap
+						in="SourceGraphic"
+						in2="archive-blur"
+						scale="15"
+						xChannelSelector="B"
+					yChannelSelector="G" />
+
+				</filter>
+
+
+				<!-- =================================================
+				MODULE 03 - RANDOM ACCESS MEMORY
+				Slightly unstable lens
+				================================================= -->
+
+				<filter id="tars-glass-memory"
+					x="-100%"
+					y="-100%"
+					width="300%"
+					height="300%"
+					filterUnits="objectBoundingBox"
+					primitiveUnits="userSpaceOnUse">
+
+					<feTurbulence
+						type="fractalNoise"
+						baseFrequency="0.015 0.011"
+						numOctaves="3"
+						seed="211"
+					result="memory-noise" />
+
+					<feGaussianBlur
+						in="memory-noise"
+						stdDeviation="1.8"
+					result="memory-blur" />
+
+					<feDisplacementMap
+						in="SourceGraphic"
+						in2="memory-blur"
+						scale="63"
+						xChannelSelector="R"
+					yChannelSelector="B" />
+
+				</filter>
+
+
+				<!-- =================================================
+				MODULE 04 - ACTIVE SYSTEMS
+				Controlled diagnostic refraction
+				================================================= -->
+
+				<filter id="tars-glass-operations"
+					x="-100%"
+					y="-100%"
+					width="300%"
+					height="300%"
+					filterUnits="objectBoundingBox"
+					primitiveUnits="userSpaceOnUse">
+
+					<feTurbulence
+						type="fractalNoise"
+						baseFrequency="0.009 0.016"
+						numOctaves="2"
+						seed="347"
+					result="operations-noise" />
+
+					<feGaussianBlur
+						in="operations-noise"
+						stdDeviation="2.4"
+					result="operations-blur" />
+
+					<feDisplacementMap
+						in="SourceGraphic"
+						in2="operations-blur"
+						scale="57"
+						xChannelSelector="G"
+					yChannelSelector="B" />
+
+				</filter>
+
+
+			</defs>
+		</svg>
+
+
+		<!-- =====================================================
+		TARS STARTUP OVERLAY
+		===================================================== -->
+
 		<div id="tars-loader">
 
 			<div class="tars-loader-status">
 
-				<p class="tars-loader-title">TARS</p>
+				<p class="tars-loader-title">
+					TARS
+				</p>
 
 				<p class="tars-loader-init">
 					INITIALIZING KNOWLEDGE ARCHITECTURE
@@ -40,44 +206,81 @@
 
 			</div>
 
+
 			<div class="tars-loader-surface">
+
 				<div class="tars-loader-box">
+
 					<div class="tars-loader-cube">
 					</div>
+
 				</div>
+
 			</div>
 
 		</div>
 
+
+		<!-- =====================================================
+		FLARE TOPIC CONTENT
+		===================================================== -->
+
 		<MadCap:bodyProxy />
-		
+
+
+		<!-- =====================================================
+		TARS STARTUP + MODULE INITIALIZATION
+		===================================================== -->
+
 		<script type="text/javascript">
 			window.addEventListener('load', function ()
 			{
 			var loader = document.getElementById('tars-loader');
+			var tarsHome = document.querySelector('.tars-home');
+
+			function initializeModules()
+			{
+			if (tarsHome)
+			{
+			tarsHome.classList.add('tars-modules-online');
+			}
+			}
 
 			if (!loader)
 			{
+			initializeModules();
 			return;
 			}
 
-			/* Has the TARS startup already run during this session? */
+			/* Startup already completed in this session. */
 			if (sessionStorage.getItem('tarsStartupShown') === 'true')
 			{
 			loader.style.display = 'none';
+
+			window.setTimeout(function ()
+			{
+			initializeModules();
+			}, 300);
+
 			return;
 			}
 
-			/* Mark the startup as shown for this browser session. */
+			/* Record startup for the current browser session. */
 			sessionStorage.setItem('tarsStartupShown', 'true');
 
-			/* Allow the complete TARS startup sequence to run. */
+			/* Run the 10-second TARS startup sequence. */
 			window.setTimeout(function ()
 			{
 			loader.classList.add('tars-loader-hidden');
+
+			window.setTimeout(function ()
+			{
+			initializeModules();
+			}, 650);
+
 			}, 10000);
 			});
 		</script>
-		
+
 	</body>
 </html>

@@ -1,16 +1,33 @@
 ﻿/*<meta />*/
 
 /* =======================================================
-   Amir_OS - Base Stylesheet
-   Graphite + Silver Theme
+   Amir_OS - Consolidated Stylesheet
 
-   CLEAN BASELINE
-   Background, typography, headings, links and images only.
+   Graphite + Turquoise Theme
+
+   Includes:
+   - standard knowledge-base styling
+   - print numbering
+   - optional Neon H1
+   - TARS startup sequence
+   - TARS video portal
+   - staggered module entrance
+   - lightweight hover and press interactions
+   - responsive layout
+
+   Removed:
+   - SVG glass distortion styling
+   - backdrop-filter experiments
+   - liquid-glass overrides
+   - animated CSS subsystem scenes
+   - obsolete module personalities
+   - duplicate borders and shadows
+   - unused keyframes
    ======================================================= */
 
 
 /* =======================================================
-   1. BODY
+   1. STANDARD KNOWLEDGE-BASE BODY
    ======================================================= */
 
 body
@@ -18,9 +35,12 @@ body
 	font-family: Arial, sans-serif;
 	font-size: 13px;
 	line-height: 1.7em;
+
 	margin: 17px;
 	max-width: 750px;
+
 	color: #e6e7e8;
+
 	background-color: #0b0c0e;
 	background-image: url('../Images/4775470.webp');
 	background-repeat: no-repeat;
@@ -31,7 +51,7 @@ body
 
 
 /* =======================================================
-   2. HEADINGS
+   2. STANDARD TYPOGRAPHY
    ======================================================= */
 
 h1,
@@ -44,21 +64,25 @@ h6
 	font-weight: bold;
 }
 
+
 h1
 {
 	font-size: 28px;
 	color: #e5e5e5;
 }
 
+
 h2
 {
 	color: #e2e3e5;
 }
 
+
 h3
 {
 	color: #caccce;
 }
+
 
 h4,
 h5,
@@ -68,25 +92,18 @@ h6
 }
 
 
-/* =======================================================
-   3. PARAGRAPHS
-   ======================================================= */
-
 p
 {
 	color: #e1e2e3;
 }
 
 
-/* =======================================================
-   4. LISTS
-   ======================================================= */
-
 ul,
 ol
 {
 	color: #e0e1e2;
 }
+
 
 li
 {
@@ -95,7 +112,7 @@ li
 
 
 /* =======================================================
-   5. LINKS
+   3. LINKS AND CROSS-REFERENCES
    ======================================================= */
 
 a
@@ -103,15 +120,12 @@ a
 	color: #d4d6d8;
 }
 
+
 a:hover
 {
 	color: #ffffff;
 }
 
-
-/* =======================================================
-   6. CROSS REFERENCES
-   ======================================================= */
 
 MadCap|xref
 {
@@ -121,86 +135,13 @@ MadCap|xref
 
 
 /* =======================================================
-   7. IMAGES
+   4. IMAGES AND FIGURES
    ======================================================= */
 
 img
 {
 	max-width: 100%;
 	height: auto;
-}
-
-
-/* =======================================================
-   8. PRINT BASELINE
-   ======================================================= */
-
-@media print
-{
-	body
-	{
-		color: #000000;
-		background-color: #ffffff;
-		background-image: none;
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ul,
-	ol,
-	li
-	{
-		color: #000000;
-	}
-
-	a
-	{
-		color: #000000;
-	}
-
-	MadCap|xref
-	{
-		color: #000000;
-	}
-
-	img
-	{
-		max-width: 100%;
-		height: auto;
-	}
-
-	h1
-	{
-		mc-auto-number-format: 'CH:Chapter {chapnum}. ';
-	}
-
-	h2
-	{
-		mc-auto-number-format: 'CH:{chapnum}.{n+} ';
-	}
-
-	h3
-	{
-		mc-auto-number-format: 'CH:{chapnum}.{n}.{n+} ';
-	}
-
-	h1.Neon
-	{
-		color: #a9a9a9;
-		font-size: 36pt;
-	}
-}
-
-
-h1.Contents
-{
-	mc-heading-level: 0;
-	mc-auto-number-format: "";
 }
 
 
@@ -212,30 +153,34 @@ p.Image
 
 p.Figure
 {
-	mc-auto-number-format: 'H: {b}FIGURE {n+}:{/b}';
 	margin-top: 0;
+
+	mc-auto-number-format: 'H: {b}FIGURE {n+}:{/b}';
 }
 
 
 /* =======================================================
-   9. NEON H1
-   Flare Selector: h1.Neon
+   5. CONTENTS HEADING
+   ======================================================= */
 
-   ELECTRIC TURQUOISE COLOR CONTROLS
+h1.Contents
+{
+	mc-heading-level: 0;
+	mc-auto-number-format: "";
+}
 
-   Core/Text:       #eaffff
-   Light Glow:      #80fff1
-   Primary Glow:    #20e6d0
-   Strong Glow:     #00bfae
-   Deep Glow:       #007f78
-   Dim/Off Color:   #164a49
 
-   The h1.Neon selector remains selectable through Flare.
+/* =======================================================
+   6. OPTIONAL NEON H1
+
+   Flare selector:
+   h1.Neon
    ======================================================= */
 
 h1.Neon
 {
 	color: #eaffff;
+
 	font-size: 36px;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -253,18 +198,8 @@ h1.Neon
 
 
 /* =======================================================
-   10. NEON ANIMATIONS
-
-   These are not Flare selectors.
-
-   h1.Neon calls these animations by name through
-   the animation property above.
+   7. NEON ANIMATIONS
    ======================================================= */
-
-
-/* -------------------------------------------------------
-   10A. NEON POWER-ON
-   ------------------------------------------------------- */
 
 @keyframes NeonShine
 {
@@ -306,10 +241,6 @@ h1.Neon
 }
 
 
-/* -------------------------------------------------------
-   10B. NEON FLICKER
-   ------------------------------------------------------- */
-
 @keyframes NeonFlicker
 {
 	0%,
@@ -333,7 +264,7 @@ h1.Neon
 
 	20%
 	{
-		opacity: 0.9;
+		opacity: 0.90;
 	}
 
 	21%
@@ -348,7 +279,7 @@ h1.Neon
 
 	53%
 	{
-		opacity: 0.7;
+		opacity: 0.70;
 	}
 
 	54%
@@ -363,26 +294,86 @@ h1.Neon
 
 	74%
 	{
-		opacity: 0.9;
+		opacity: 0.90;
 	}
 }
 
 
 /* =======================================================
-   11. TARS STARTUP / LOADING SCREEN
-
-   HTML5 startup overlay used by TarsLanding.flmsp.
-
-   Designed conservatively for MadCap Flare.
-   No Flexbox is used.
-
-   All styles are isolated beneath #tars-loader.
+   8. PRINT OUTPUT
    ======================================================= */
 
+@media print
+{
+	body
+	{
+		color: #000000;
 
-/* -------------------------------------------------------
-   11A. FULL-SCREEN OVERLAY
-   ------------------------------------------------------- */
+		background-color: #ffffff;
+		background-image: none;
+	}
+
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	li,
+	a,
+	MadCap|xref
+	{
+		color: #000000;
+	}
+
+
+	img
+	{
+		max-width: 100%;
+		height: auto;
+	}
+
+
+	h1
+	{
+		mc-auto-number-format: 'CH:Chapter {chapnum}. ';
+	}
+
+
+	h2
+	{
+		mc-auto-number-format: 'CH:{chapnum}.{n+} ';
+	}
+
+
+	h3
+	{
+		mc-auto-number-format: 'CH:{chapnum}.{n}.{n+} ';
+	}
+
+
+	h1.Neon
+	{
+		color: #a9a9a9;
+		font-size: 36pt;
+	}
+
+
+	#tars-loader,
+	.tars-home
+	{
+		display: none;
+	}
+}
+
+
+/* =======================================================
+   9. TARS STARTUP OVERLAY
+   ======================================================= */
 
 #tars-loader
 {
@@ -406,21 +397,18 @@ h1.Neon
 }
 
 
-/* -------------------------------------------------------
-   11B. HIDDEN STATE
-   ------------------------------------------------------- */
-
 #tars-loader.tars-loader-hidden
 {
 	opacity: 0;
 	visibility: hidden;
+
 	pointer-events: none;
 }
 
 
-/* -------------------------------------------------------
-   11C. STARTUP STATUS AREA
-   ------------------------------------------------------- */
+/* =======================================================
+   10. STARTUP STATUS AREA
+   ======================================================= */
 
 #tars-loader .tars-loader-status
 {
@@ -432,15 +420,15 @@ h1.Neon
 	width: 600px;
 	margin-left: -300px;
 
-	text-align: center;
-
 	z-index: 10;
+
+	text-align: center;
 }
 
 
-/* -------------------------------------------------------
-   11D. TARS WORDMARK
-   ------------------------------------------------------- */
+/* =======================================================
+   11. STARTUP WORDMARK
+   ======================================================= */
 
 #tars-loader .tars-loader-title
 {
@@ -474,9 +462,9 @@ h1.Neon
 }
 
 
-/* -------------------------------------------------------
-   11E. INITIALIZATION LABEL
-   ------------------------------------------------------- */
+/* =======================================================
+   12. STARTUP TEXT
+   ======================================================= */
 
 #tars-loader .tars-loader-init
 {
@@ -501,10 +489,6 @@ h1.Neon
 }
 
 
-/* -------------------------------------------------------
-   11F. STATUS MESSAGES
-   ------------------------------------------------------- */
-
 #tars-loader .tars-loader-line
 {
 	margin-top: 5px;
@@ -521,13 +505,12 @@ h1.Neon
 }
 
 
-/* Each line receives its own boot timing. */
-
 #tars-loader .tars-line-1
 {
 	animation:
 		TarsStatusAppear 0.6s 3s forwards;
 }
+
 
 #tars-loader .tars-line-2
 {
@@ -535,11 +518,13 @@ h1.Neon
 		TarsStatusAppear 0.6s 4s forwards;
 }
 
+
 #tars-loader .tars-line-3
 {
 	animation:
 		TarsStatusAppear 0.6s 5s forwards;
 }
+
 
 #tars-loader .tars-line-4
 {
@@ -547,16 +532,13 @@ h1.Neon
 		TarsStatusAppear 0.6s 6s forwards;
 }
 
+
 #tars-loader .tars-line-5
 {
 	animation:
 		TarsStatusAppear 0.6s 7s forwards;
 }
 
-
-/* -------------------------------------------------------
-   11G. ONLINE MESSAGE
-   ------------------------------------------------------- */
 
 #tars-loader .tars-loader-online
 {
@@ -582,11 +564,9 @@ h1.Neon
 }
 
 
-/* -------------------------------------------------------
-   11H. ANIMATION SURFACE
-
-   Cube remains separate from the status area.
-   ------------------------------------------------------- */
+/* =======================================================
+   13. STARTUP CUBE
+   ======================================================= */
 
 #tars-loader .tars-loader-surface
 {
@@ -600,10 +580,6 @@ h1.Neon
 	transform: rotate(-35deg);
 }
 
-
-/* -------------------------------------------------------
-   11I. MOVING TRACK
-   ------------------------------------------------------- */
 
 #tars-loader .tars-loader-box
 {
@@ -624,10 +600,6 @@ h1.Neon
 		TarsLoaderSurface 1.5s ease-in-out infinite;
 }
 
-
-/* -------------------------------------------------------
-   11J. ELECTRIC CUBE
-   ------------------------------------------------------- */
 
 #tars-loader .tars-loader-cube
 {
@@ -656,13 +628,8 @@ h1.Neon
 
 
 /* =======================================================
-   12. TARS STARTUP ANIMATIONS
+   14. STARTUP ANIMATIONS
    ======================================================= */
-
-
-/* -------------------------------------------------------
-   12A. TITLE POWER-ON
-   ------------------------------------------------------- */
 
 @keyframes TarsTitleBoot
 {
@@ -688,7 +655,7 @@ h1.Neon
 
 	45%
 	{
-		opacity: 0.7;
+		opacity: 0.70;
 
 		text-shadow:
 			0 0 8px #80fff1,
@@ -700,17 +667,7 @@ h1.Neon
 		opacity: 0.25;
 	}
 
-	70%
-	{
-		opacity: 1;
-
-		text-shadow:
-			0 0 6px #eaffff,
-			0 0 12px #80fff1,
-			0 0 24px #20e6d0,
-			0 0 40px #00bfae;
-	}
-
+	70%,
 	100%
 	{
 		opacity: 1;
@@ -723,10 +680,6 @@ h1.Neon
 	}
 }
 
-
-/* -------------------------------------------------------
-   12B. STATUS LINE APPEARANCE
-   ------------------------------------------------------- */
 
 @keyframes TarsStatusAppear
 {
@@ -742,10 +695,6 @@ h1.Neon
 }
 
 
-/* -------------------------------------------------------
-   12C. SYSTEM ONLINE
-   ------------------------------------------------------- */
-
 @keyframes TarsOnline
 {
 	0%
@@ -760,7 +709,7 @@ h1.Neon
 
 	40%
 	{
-		opacity: 0.3;
+		opacity: 0.30;
 	}
 
 	55%
@@ -770,7 +719,7 @@ h1.Neon
 
 	70%
 	{
-		opacity: 0.6;
+		opacity: 0.60;
 	}
 
 	100%
@@ -779,10 +728,6 @@ h1.Neon
 	}
 }
 
-
-/* -------------------------------------------------------
-   12D. SURFACE MOVEMENT
-   ------------------------------------------------------- */
 
 @keyframes TarsLoaderSurface
 {
@@ -797,10 +742,6 @@ h1.Neon
 	}
 }
 
-
-/* -------------------------------------------------------
-   12E. CUBE ROLL
-   ------------------------------------------------------- */
 
 @keyframes TarsLoaderCube
 {
@@ -830,82 +771,190 @@ h1.Neon
 
 
 /* =======================================================
-   13. PRINT SAFETY
+   15. TARS PORTAL BODY
    ======================================================= */
 
-@media print
+body.tars-home-body
 {
-	#tars-loader
-	{
-		display: none;
-	}
+	width: auto;
+	max-width: none;
+
+	margin: 0;
+
+	padding-top: 0;
+	padding-right: 40px;
+	padding-bottom: 0;
+	padding-left: 40px;
+
+	color: #e6e7e8;
+
+	background-color: #090b0c;
+	background-image: url('../Images/4775470.webp');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 }
 
+
 /* =======================================================
-   14. TARS HOME / LANDING PAGE
-
-   Used only by TARS-Home.htm.
-
-   All landing-page selectors are isolated beneath
-   .tars-home to avoid affecting normal KB topics.
+   16. TARS PORTAL CANVAS
    ======================================================= */
 
-
-/* -------------------------------------------------------
-   14A. LANDING PAGE CONTAINER
-   ------------------------------------------------------- */
-
-.tars-home
+body.tars-home-body .tars-home
 {
 	position: relative;
 
-	width: 1100px;
+	width: 1200px;
 	max-width: 100%;
 
-	margin-left: auto;
+	margin-top: 0;
 	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
 
-	padding-top: 60px;
-	padding-bottom: 50px;
+	padding-top: 55px;
+	padding-bottom: 60px;
 
 	font-family: Arial, sans-serif;
 	color: #e6e7e8;
 }
 
 
-/* -------------------------------------------------------
-   14B. HERO AREA
-   ------------------------------------------------------- */
+/* =======================================================
+   17. TARS HERO
+   ======================================================= */
 
 .tars-home .tars-home-hero
 {
 	position: relative;
+
+	width: 100%;
+
+	box-sizing: border-box;
+	overflow: hidden;
+	isolation: isolate;
+
+	margin-right: auto;
+	margin-bottom: 30px;
+	margin-left: auto;
 
 	padding-top: 35px;
 	padding-right: 40px;
 	padding-bottom: 45px;
 	padding-left: 40px;
 
-	margin-bottom: 30px;
+	border-top: 2px solid rgba(128, 255, 241, 0.32);
+	border-right: 1px solid rgba(32, 230, 208, 0.14);
+	border-bottom: 1px solid rgba(0, 127, 120, 0.17);
+	border-left: 1px solid rgba(128, 255, 241, 0.17);
 
-	text-align: center;
+	border-radius: 28px;
 
-	background-color: rgba(5, 10, 12, 0.88);
-
-	border-top: 1px solid #164a49;
-	border-right: 1px solid #164a49;
-	border-bottom: 1px solid #164a49;
-	border-left: 1px solid #164a49;
+	background-color: #04090a;
 
 	box-shadow:
-		0 0 10px rgba(32, 230, 208, 0.08),
-		inset 0 0 30px rgba(0, 0, 0, 0.8);
+		0 18px 36px rgba(0, 0, 0, 0.48),
+		0 0 10px rgba(32, 230, 208, 0.055),
+		inset 0 2px 2px rgba(170, 255, 246, 0.13),
+		inset 0 -10px 22px rgba(0, 0, 0, 0.36);
+
+	text-align: center;
 }
 
 
-/* -------------------------------------------------------
-   14C. HERO EYEBROW
-   ------------------------------------------------------- */
+/* =======================================================
+   18. HERO VIDEO
+   ======================================================= */
+
+.tars-home .tars-hero-video
+{
+	position: absolute;
+
+	top: -4%;
+	left: -3%;
+
+	width: 106%;
+	height: 108%;
+
+	max-width: none;
+
+	z-index: 0;
+
+	object-fit: cover;
+	object-position: center center;
+
+	opacity: 0.68;
+
+	filter:
+		brightness(68%)
+		saturate(75%)
+		contrast(118%);
+
+	pointer-events: none;
+}
+
+
+.tars-home .tars-hero-video-shade
+{
+	position: absolute;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 1;
+
+	background-image:
+		radial-gradient(
+			ellipse at 50% 43%,
+			rgba(0, 0, 0, 0.28) 0%,
+			rgba(0, 0, 0, 0.19) 34%,
+			transparent 67%
+		),
+		linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.58) 0%,
+			rgba(0, 0, 0, 0.20) 37%,
+			transparent 68%
+		),
+		linear-gradient(
+			180deg,
+			rgba(2, 8, 10, 0.42) 0%,
+			transparent 38%,
+			transparent 100%
+		),
+		radial-gradient(
+			ellipse at 82% 40%,
+			rgba(32, 230, 208, 0.095),
+			transparent 46%
+		),
+		radial-gradient(
+			ellipse at center,
+			transparent 38%,
+			rgba(0, 0, 0, 0.18) 72%,
+			rgba(0, 0, 0, 0.44) 100%
+		);
+
+	pointer-events: none;
+}
+
+
+/* =======================================================
+   19. HERO CONTENT
+   ======================================================= */
+
+.tars-home .tars-home-eyebrow,
+.tars-home .tars-home-title,
+.tars-home .tars-home-subtitle,
+.tars-home .tars-home-status,
+.tars-home .tars-home-divider
+{
+	position: relative;
+	z-index: 3;
+}
+
 
 .tars-home .tars-home-eyebrow
 {
@@ -919,12 +968,11 @@ h1.Neon
 
 	letter-spacing: 5px;
 	text-transform: uppercase;
+
+	text-shadow:
+		0 2px 5px rgba(0, 0, 0, 0.92);
 }
 
-
-/* -------------------------------------------------------
-   14D. MAIN TARS WORDMARK
-   ------------------------------------------------------- */
 
 .tars-home .tars-home-title
 {
@@ -940,6 +988,7 @@ h1.Neon
 	text-transform: uppercase;
 
 	text-shadow:
+		0 2px 6px rgba(0, 0, 0, 0.92),
 		0 0 6px #eaffff,
 		0 0 12px #80fff1,
 		0 0 22px #20e6d0,
@@ -949,10 +998,6 @@ h1.Neon
 		TarsHomePulse 6s ease-in-out infinite;
 }
 
-
-/* -------------------------------------------------------
-   14E. HERO DESCRIPTION
-   ------------------------------------------------------- */
 
 .tars-home .tars-home-subtitle
 {
@@ -968,12 +1013,11 @@ h1.Neon
 
 	font-size: 14px;
 	line-height: 1.8em;
+
+	text-shadow:
+		0 2px 5px rgba(0, 0, 0, 0.92);
 }
 
-
-/* -------------------------------------------------------
-   14F. SYSTEM STATUS
-   ------------------------------------------------------- */
 
 .tars-home .tars-home-status
 {
@@ -988,8 +1032,9 @@ h1.Neon
 	letter-spacing: 2px;
 
 	text-shadow:
-		0 0 7px rgba(32, 230, 208, 0.7);
+		0 2px 5px rgba(0, 0, 0, 0.92);
 }
+
 
 .tars-home .tars-status-light
 {
@@ -1003,10 +1048,6 @@ h1.Neon
 		TarsStatusPulse 2s ease-in-out infinite;
 }
 
-
-/* -------------------------------------------------------
-   14G. ELECTRIC DIVIDER
-   ------------------------------------------------------- */
 
 .tars-home .tars-home-divider
 {
@@ -1027,280 +1068,7 @@ h1.Neon
 
 
 /* =======================================================
-   15. TARS MODULE GRID
-   ======================================================= */
-
-.tars-home .tars-module-grid
-{
-	position: relative;
-
-	width: 100%;
-
-	font-size: 0;
-}
-
-
-/* -------------------------------------------------------
-   15A. MODULE CARD
-
-   Inline-block is being used instead of CSS Grid/Flexbox
-   to remain conservative with Flare's CSS parser.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module
-{
-	position: relative;
-
-	display: inline-block;
-	vertical-align: top;
-
-	width: 48%;
-	min-height: 260px;
-
-	margin-right: 2%;
-	margin-bottom: 24px;
-
-	padding-top: 25px;
-	padding-right: 28px;
-	padding-bottom: 25px;
-	padding-left: 28px;
-
-	box-sizing: border-box;
-
-	overflow: hidden;
-
-	background-color: rgba(7, 11, 13, 0.92);
-
-	border-top: 1px solid #253938;
-	border-right: 1px solid #253938;
-	border-bottom: 1px solid #253938;
-	border-left: 3px solid #164a49;
-
-	box-shadow:
-		inset 0 0 30px rgba(0, 0, 0, 0.8),
-		0 0 10px rgba(32, 230, 208, 0.04);
-
-	font-size: 13px;
-
-	transition:
-		border-color 0.35s ease,
-		box-shadow 0.35s ease,
-		background-color 0.35s ease;
-}
-
-
-/* -------------------------------------------------------
-   15B. CARD HOVER STATE
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:hover
-{
-	background-color: rgba(8, 17, 18, 0.96);
-
-	border-top-color: #20e6d0;
-	border-right-color: #20e6d0;
-	border-bottom-color: #20e6d0;
-	border-left-color: #20e6d0;
-
-	box-shadow:
-		0 0 8px rgba(32, 230, 208, 0.2),
-		0 0 20px rgba(0, 191, 174, 0.12),
-		inset 0 0 35px rgba(0, 0, 0, 0.85);
-}
-
-
-/* -------------------------------------------------------
-   15C. PRIMARY MODULE
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-primary
-{
-	border-left-color: #20e6d0;
-
-	box-shadow:
-		0 0 12px rgba(32, 230, 208, 0.14),
-		inset 0 0 30px rgba(0, 0, 0, 0.8);
-}
-
-
-/* -------------------------------------------------------
-   15D. MODULE NUMBER / CLASSIFICATION
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-number
-{
-	margin-top: 0;
-	margin-bottom: 15px;
-
-	color: #607372;
-
-	font-family: "Courier New", monospace;
-	font-size: 10px;
-
-	letter-spacing: 2px;
-}
-
-
-/* -------------------------------------------------------
-   15E. MODULE TITLE
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-title
-{
-	margin-top: 0;
-	margin-bottom: 15px;
-
-	color: #dffdf9;
-
-	font-size: 20px;
-
-	letter-spacing: 2px;
-
-	text-shadow:
-		0 0 7px rgba(32, 230, 208, 0.34);
-}
-
-
-/* -------------------------------------------------------
-   15F. MODULE DESCRIPTION
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-description
-{
-	min-height: 80px;
-
-	margin-top: 0;
-	margin-bottom: 18px;
-
-	color: #a5afaf;
-
-	font-size: 12px;
-	line-height: 1.65em;
-}
-
-
-/* -------------------------------------------------------
-   15G. MODULE STATE
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-state
-{
-	margin-top: 0;
-	margin-bottom: 15px;
-
-	color: #20e6d0;
-
-	font-family: "Courier New", monospace;
-	font-size: 10px;
-
-	letter-spacing: 1px;
-}
-
-
-/* -------------------------------------------------------
-   15H. MODULE ACTION
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-action
-{
-	margin-top: 18px;
-	margin-bottom: 0;
-
-	font-family: "Courier New", monospace;
-	font-size: 11px;
-	font-weight: bold;
-
-	letter-spacing: 1px;
-}
-
-
-/* -------------------------------------------------------
-   15I. ACTIVE MODULE LINK
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-action a
-{
-	display: block;
-
-	padding-top: 10px;
-	padding-right: 12px;
-	padding-bottom: 10px;
-	padding-left: 12px;
-
-	color: #eaffff;
-
-	text-decoration: none;
-
-	background-color: rgba(32, 230, 208, 0.06);
-
-	border-top: 1px solid #164a49;
-	border-right: 1px solid #164a49;
-	border-bottom: 1px solid #164a49;
-	border-left: 1px solid #164a49;
-
-	transition:
-		color 0.25s ease,
-		background-color 0.25s ease,
-		border-color 0.25s ease,
-		box-shadow 0.25s ease;
-}
-
-.tars-home .tars-module-action a:hover
-{
-	color: #ffffff;
-
-	background-color: rgba(32, 230, 208, 0.14);
-
-	border-color: #20e6d0;
-
-	box-shadow:
-		0 0 8px rgba(32, 230, 208, 0.3),
-		inset 0 0 12px rgba(32, 230, 208, 0.08);
-}
-
-
-/* -------------------------------------------------------
-   15J. DISABLED MODULE ACTION
-   ------------------------------------------------------- */
-
-.tars-home .tars-module-disabled
-{
-	color: #536362;
-}
-
-
-/* =======================================================
-   16. TARS HOME FOOTER
-   ======================================================= */
-
-.tars-home .tars-home-footer
-{
-	clear: both;
-
-	margin-top: 10px;
-	padding-top: 20px;
-
-	border-top: 1px solid #223332;
-
-	text-align: center;
-}
-
-.tars-home .tars-home-footer p
-{
-	margin-top: 4px;
-	margin-bottom: 4px;
-
-	color: #526160;
-
-	font-family: "Courier New", monospace;
-	font-size: 9px;
-
-	letter-spacing: 2px;
-}
-
-
-/* =======================================================
-   17. TARS HOME ANIMATION
+   20. HERO ANIMATIONS
    ======================================================= */
 
 @keyframes TarsHomePulse
@@ -1309,6 +1077,7 @@ h1.Neon
 	100%
 	{
 		text-shadow:
+			0 2px 6px rgba(0, 0, 0, 0.92),
 			0 0 6px #eaffff,
 			0 0 12px #80fff1,
 			0 0 22px #20e6d0,
@@ -1318,6 +1087,7 @@ h1.Neon
 	50%
 	{
 		text-shadow:
+			0 2px 6px rgba(0, 0, 0, 0.92),
 			0 0 4px #eaffff,
 			0 0 9px #80fff1,
 			0 0 16px #20e6d0,
@@ -1336,289 +1106,166 @@ h1.Neon
 
 	50%
 	{
-		opacity: 0.4;
+		opacity: 0.40;
 	}
 }
 
 
 /* =======================================================
-   18. TARS HOME SMALL-SCREEN FALLBACK
+   21. MODULE GRID
    ======================================================= */
 
-@media screen and (max-width: 800px)
-{
-	.tars-home
-	{
-		width: auto;
-
-		padding-top: 25px;
-		padding-right: 15px;
-		padding-bottom: 30px;
-		padding-left: 15px;
-	}
-
-	.tars-home .tars-home-hero
-	{
-		padding-right: 20px;
-		padding-left: 20px;
-	}
-
-	.tars-home .tars-home-title
-	{
-		font-size: 44px;
-		letter-spacing: 10px;
-	}
-
-	.tars-home .tars-module
-	{
-		display: block;
-
-		width: 100%;
-		min-height: 0;
-
-		margin-right: 0;
-		margin-bottom: 18px;
-	}
-}
-
-
-/* =======================================================
-   19. TARS HOME PRINT SAFETY
-   ======================================================= */
-
-@media print
-{
-	.tars-home
-	{
-		display: none;
-	}
-}
-
-/* =======================================================
-   20. TARS PORTAL - FULL CANVAS
-
-   Used only by TARS-Home.htm.
-
-   Removes the normal Amir_OS article width restriction
-   and turns the TARS portal into a centered wide-screen
-   experience.
-
-   Normal KB topics remain unchanged.
-   ======================================================= */
-
-body.tars-home-body
-{
-	width: auto;
-	max-width: none;
-
-	margin-top: 0;
-	margin-right: 0;
-	margin-bottom: 0;
-	margin-left: 0;
-
-	padding-top: 0;
-	padding-right: 40px;
-	padding-bottom: 0;
-	padding-left: 40px;
-
-	color: #e6e7e8;
-
-	background-color: #090b0c;
-	background-image: url('../Images/4775470.webp');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	background-attachment: fixed;
-}
-
-
-/* Main TARS interface canvas */
-
-body.tars-home-body .tars-home
+.tars-home .tars-module-grid
 {
 	position: relative;
 
-	width: 1200px;
-	max-width: 100%;
-
-	margin-top: 0;
-	margin-right: auto;
-	margin-bottom: 0;
-	margin-left: auto;
-
-	padding-top: 55px;
-	padding-bottom: 60px;
-}
-
-
-/* Increase hero presence on the portal */
-
-body.tars-home-body .tars-home-hero
-{
 	width: 100%;
 
-	box-sizing: border-box;
-
-	margin-right: auto;
-	margin-left: auto;
-}
-
-
-/* Maintain a balanced two-column module layout */
-
-body.tars-home-body .tars-module
-{
-	width: 49%;
-
-	margin-right: 2%;
-}
-
-
-/* Remove the extra right margin from every second card */
-
-body.tars-home-body .tars-module:nth-child(2),
-body.tars-home-body .tars-module:nth-child(4)
-{
-	margin-right: 0;
+	font-size: 0;
 }
 
 
 /* =======================================================
-   20A. TARS PORTAL - LARGE DISPLAY
+   22. VIDEO MODULE CARD
    ======================================================= */
-
-@media screen and (min-width: 1400px)
-{
-	body.tars-home-body .tars-home
-	{
-		width: 1280px;
-	}
-
-	body.tars-home-body .tars-home-title
-	{
-		font-size: 72px;
-	}
-
-	body.tars-home-body .tars-module
-	{
-		min-height: 285px;
-	}
-}
-
-
-/* =======================================================
-   20B. TARS PORTAL - SMALL DISPLAY
-   ======================================================= */
-
-@media screen and (max-width: 800px)
-{
-	body.tars-home-body
-	{
-		padding-right: 15px;
-		padding-left: 15px;
-	}
-
-	body.tars-home-body .tars-home
-	{
-		width: auto;
-
-		padding-top: 25px;
-		padding-bottom: 30px;
-	}
-
-	body.tars-home-body .tars-module
-	{
-		display: block;
-
-		width: 100%;
-
-		margin-right: 0;
-		margin-bottom: 18px;
-	}
-}
-
-/* =======================================================
-   22. TARS MODULE - LIVE SYSTEM BACKGROUNDS
-
-   Pure CSS animated subsystem effects.
-   No video or external media required.
-
-   Designed around the existing .tars-module cards.
-   ======================================================= */
-
-
-/* -------------------------------------------------------
-   22A. BASE LIVE MODULE
-   ------------------------------------------------------- */
 
 .tars-home .tars-module
 {
 	position: relative;
-	overflow: hidden;
 
-	background-color: #05090b;
-	background-image:
-		linear-gradient(
-			120deg,
-			rgba(0, 0, 0, 0.96) 0%,
-			rgba(5, 15, 16, 0.92) 45%,
-			rgba(9, 35, 34, 0.55) 100%
-		);
+	display: inline-block;
+	vertical-align: top;
+
+	width: 49%;
+	min-height: 260px;
+
+	margin-right: 2%;
+	margin-bottom: 24px;
+
+	padding-top: 25px;
+	padding-right: 28px;
+	padding-bottom: 25px;
+	padding-left: 28px;
+
+	box-sizing: border-box;
+	overflow: hidden;
+	isolation: isolate;
+
+	border-top: 2px solid rgba(128, 255, 241, 0.38);
+	border-right: 2px solid rgba(32, 230, 208, 0.16);
+	border-bottom: 2px solid rgba(0, 127, 120, 0.16);
+	border-left: 2px solid rgba(128, 255, 241, 0.20);
+
+	border-radius: 34px;
+
+	background-color: #03090a;
+	background-image: none;
 
 	box-shadow:
-		inset 0 0 50px rgba(0, 0, 0, 0.95),
-		inset -30px 0 60px rgba(0, 127, 120, 0.08),
-		0 0 10px rgba(32, 230, 208, 0.08);
+		0 18px 30px rgba(0, 0, 0, 0.48),
+		0 7px 12px rgba(0, 0, 0, 0.32),
+		0 0 8px rgba(32, 230, 208, 0.055),
+		inset 0 3px 2px rgba(185, 255, 247, 0.15),
+		inset 0 -10px 18px rgba(0, 0, 0, 0.40);
+
+	font-size: 13px;
+
+	opacity: 0;
+
+	transform:
+		translateY(18px)
+		scale(0.97);
+
+	transform-origin: center center;
+
+	transition:
+		opacity 0.65s ease,
+		transform 0.30s ease,
+		border-color 0.30s ease,
+		box-shadow 0.30s ease;
 }
 
 
-/* -------------------------------------------------------
-   22B. INTERNAL SCANNING LIGHT
-
-   An oversized translucent plane moves across each card.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:before
+.tars-home .tars-module:nth-child(2),
+.tars-home .tars-module:nth-child(4)
 {
-	content: "";
-
-	position: absolute;
-
-	top: -80%;
-	left: -40%;
-
-	width: 45%;
-	height: 260%;
-
-	background-image:
-		linear-gradient(
-			90deg,
-			transparent,
-			rgba(32, 230, 208, 0.02),
-			rgba(128, 255, 241, 0.16),
-			rgba(32, 230, 208, 0.03),
-			transparent
-		);
-
-	transform: rotate(18deg);
-
-	animation:
-		TarsModuleSweep 8s linear infinite;
-
-	pointer-events: none;
+	margin-right: 0;
 }
 
 
-/* -------------------------------------------------------
-   22C. DEPTH / DATA FIELD
-
-   A second layer creates faint moving structural lines.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:after
+.tars-home .tars-module-primary
 {
-	content: "";
+	cursor: pointer;
 
+	border-top-color: rgba(145, 255, 243, 0.43);
+
+	box-shadow:
+		0 18px 30px rgba(0, 0, 0, 0.48),
+		0 7px 12px rgba(0, 0, 0, 0.32),
+		0 0 10px rgba(32, 230, 208, 0.08),
+		inset 0 3px 2px rgba(185, 255, 247, 0.17),
+		inset 0 -10px 18px rgba(0, 0, 0, 0.40);
+}
+
+
+/* =======================================================
+   23. STAGGERED MODULE ENTRANCE
+   ======================================================= */
+
+.tars-home.tars-modules-online .tars-module:nth-child(1)
+{
+	opacity: 1;
+
+	transform:
+		translateY(0)
+		scale(1);
+
+	transition-delay: 0.10s;
+}
+
+
+.tars-home.tars-modules-online .tars-module:nth-child(2)
+{
+	opacity: 1;
+
+	transform:
+		translateY(0)
+		scale(1);
+
+	transition-delay: 0.55s;
+}
+
+
+.tars-home.tars-modules-online .tars-module:nth-child(3)
+{
+	opacity: 1;
+
+	transform:
+		translateY(0)
+		scale(1);
+
+	transition-delay: 1.00s;
+}
+
+
+.tars-home.tars-modules-online .tars-module:nth-child(4)
+{
+	opacity: 1;
+
+	transform:
+		translateY(0)
+		scale(1);
+
+	transition-delay: 1.45s;
+}
+
+
+/* =======================================================
+   24. MODULE VIDEO SCENE
+   ======================================================= */
+
+.tars-home .tars-module-scene
+{
 	position: absolute;
 
 	top: 0;
@@ -1626,31 +1273,81 @@ body.tars-home-body .tars-module:nth-child(4)
 	bottom: 0;
 	left: 0;
 
-	background-image:
-		linear-gradient(
-			0deg,
-			transparent 0%,
-			transparent 48%,
-			rgba(32, 230, 208, 0.05) 49%,
-			rgba(32, 230, 208, 0.05) 50%,
-			transparent 51%,
-			transparent 100%
-		);
+	width: 100%;
+	height: 100%;
 
-	background-size: 100% 24px;
+	z-index: 0;
 
-	opacity: 0.7;
+	overflow: hidden;
 
-	animation:
-		TarsDataDrift 10s linear infinite;
+	border-radius: 32px;
+
+	background-color: #03090a;
+	background-image: none;
 
 	pointer-events: none;
 }
 
 
-/* -------------------------------------------------------
-   22D. KEEP CARD CONTENT ABOVE EFFECTS
-   ------------------------------------------------------- */
+.tars-home .tars-module-video
+{
+	position: absolute;
+
+	top: -1%;
+	left: -1%;
+
+	width: 102%;
+	height: 102%;
+
+	max-width: none;
+
+	z-index: 0;
+
+	object-fit: cover;
+	object-position: center center;
+
+	opacity: 0.72;
+
+	filter:
+		brightness(62%)
+		saturate(82%)
+		contrast(110%);
+
+	pointer-events: none;
+}
+
+
+.tars-home .tars-module-video-shade
+{
+	position: absolute;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 1;
+
+	background-image:
+		linear-gradient(
+			90deg,
+			rgba(1, 6, 8, 0.70) 0%,
+			rgba(1, 6, 8, 0.43) 42%,
+			rgba(1, 6, 8, 0.22) 100%
+		),
+		linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.48),
+			transparent 52%
+		);
+
+	pointer-events: none;
+}
+
+
+/* =======================================================
+   25. MODULE CONTENT
+   ======================================================= */
 
 .tars-home .tars-module-number,
 .tars-home .tars-module-title,
@@ -1663,393 +1360,302 @@ body.tars-home-body .tars-module:nth-child(4)
 }
 
 
-/* =======================================================
-   23. INDIVIDUAL MODULE PERSONALITIES
-   ======================================================= */
-
-
-/* -------------------------------------------------------
-   MODULE 01 - KNOWLEDGE CORE
-
-   Brightest and most active because this is the primary
-   portal into the documentation system.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(1)
+.tars-home .tars-module-number
 {
-	background-image:
-		radial-gradient(
-			circle at 82% 50%,
-			rgba(32, 230, 208, 0.22),
-			rgba(0, 127, 120, 0.08) 20%,
-			transparent 48%
-		),
-		linear-gradient(
-			120deg,
-			#040708 0%,
-			#071011 62%,
-			#09201f 100%
-		);
+	margin-top: 0;
+	margin-bottom: 15px;
 
-	animation:
-		TarsCoreBreath 6s ease-in-out infinite;
+	color: #71817f;
+
+	font-family: "Courier New", monospace;
+	font-size: 10px;
+
+	letter-spacing: 2px;
+
+	text-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.92);
 }
 
 
-/* -------------------------------------------------------
-   MODULE 02 - SYSTEM ARCHIVE
-
-   Vertical repository / server-bank feeling.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(2)
+.tars-home .tars-module-title
 {
-	background-image:
-		repeating-linear-gradient(
-			90deg,
-			rgba(32, 230, 208, 0.00) 0px,
-			rgba(32, 230, 208, 0.00) 42px,
-			rgba(32, 230, 208, 0.07) 43px,
-			rgba(32, 230, 208, 0.00) 44px
-		),
-		linear-gradient(
-			135deg,
-			#040708,
-			#071212 65%,
-			#092423
-		);
+	margin-top: 0;
+	margin-bottom: 15px;
 
-	background-size:
-		110% 100%,
-		100% 100%;
+	color: #eaffff;
 
-	animation:
-		TarsArchiveShift 14s ease-in-out infinite;
+	font-size: 20px;
+
+	letter-spacing: 2px;
+
+	text-shadow:
+		0 2px 5px rgba(0, 0, 0, 0.92),
+		0 0 7px rgba(32, 230, 208, 0.30);
 }
 
 
-/* -------------------------------------------------------
-   MODULE 03 - RANDOM ACCESS MEMORY
-
-   Layered diagonal memory-stream aesthetic.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(3)
+.tars-home .tars-module-description
 {
-	background-image:
-		repeating-linear-gradient(
-			135deg,
-			transparent 0px,
-			transparent 18px,
-			rgba(32, 230, 208, 0.035) 19px,
-			transparent 20px
-		),
-		radial-gradient(
-			circle at 75% 45%,
-			rgba(128, 255, 241, 0.12),
-			transparent 38%
-		),
-		linear-gradient(
-			125deg,
-			#040708,
-			#071111
-		);
+	min-height: 80px;
 
-	background-size:
-		140% 140%,
-		100% 100%,
-		100% 100%;
+	margin-top: 0;
+	margin-bottom: 18px;
 
-	animation:
-		TarsMemoryDrift 12s linear infinite;
+	color: #b6c0bf;
+
+	font-size: 12px;
+	line-height: 1.65em;
+
+	text-shadow:
+		0 2px 4px rgba(0, 0, 0, 0.94);
 }
 
 
-/* -------------------------------------------------------
-   MODULE 04 - ACTIVE SYSTEMS
-
-   More energetic operational/radar appearance.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(4)
+.tars-home .tars-module-state
 {
-	background-image:
-		radial-gradient(
-			circle at 82% 50%,
-			transparent 0%,
-			transparent 13%,
-			rgba(32, 230, 208, 0.12) 14%,
-			transparent 15%,
-			transparent 25%,
-			rgba(32, 230, 208, 0.07) 26%,
-			transparent 27%,
-			transparent 100%
-		),
-		linear-gradient(
-			120deg,
-			#040708,
-			#071313 65%,
-			#09201f
-		);
+	margin-top: 0;
+	margin-bottom: 15px;
 
-	background-size:
-		110% 110%,
-		100% 100%;
+	color: #20e6d0;
 
-	animation:
-		TarsOperationsPulse 5s ease-in-out infinite;
+	font-family: "Courier New", monospace;
+	font-size: 10px;
+
+	letter-spacing: 1px;
+
+	text-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.94),
+		0 0 7px rgba(32, 230, 208, 0.22);
+}
+
+
+.tars-home .tars-module-primary .tars-module-state
+{
+	color: #9cfff4;
+}
+
+
+.tars-home .tars-module-action
+{
+	margin-top: 18px;
+	margin-bottom: 0;
+
+	font-family: "Courier New", monospace;
+	font-size: 11px;
+	font-weight: bold;
+
+	letter-spacing: 1px;
+
+	text-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.94);
+}
+
+
+.tars-home .tars-module-disabled
+{
+	color: #61706f;
 }
 
 
 /* =======================================================
-   24. MODULE MOTION
+   26. KNOWLEDGE-BASE ACTION LINK
    ======================================================= */
 
-
-/* Traveling light plane */
-
-@keyframes TarsModuleSweep
+.tars-home .tars-module-action a
 {
-	0%
-	{
-		left: -60%;
-		opacity: 0;
-	}
+	display: block;
 
-	15%
-	{
-		opacity: 1;
-	}
+	padding-top: 10px;
+	padding-right: 12px;
+	padding-bottom: 10px;
+	padding-left: 12px;
 
-	55%
-	{
-		opacity: 0.85;
-	}
+	color: #eaffff;
 
-	75%
-	{
-		left: 130%;
-		opacity: 0;
-	}
+	text-decoration: none;
 
-	100%
-	{
-		left: 130%;
-		opacity: 0;
-	}
+	background-color: rgba(2, 10, 12, 0.52);
+
+	border-top: 1px solid rgba(128, 255, 241, 0.19);
+	border-right: 1px solid rgba(32, 230, 208, 0.14);
+	border-bottom: 1px solid rgba(0, 127, 120, 0.18);
+	border-left: 1px solid rgba(128, 255, 241, 0.17);
+
+	transition:
+		color 0.25s ease,
+		background-color 0.25s ease,
+		border-color 0.25s ease,
+		box-shadow 0.25s ease;
 }
 
 
-/* Slowly moving scan/data field */
-
-@keyframes TarsDataDrift
+.tars-home .tars-module-action a:hover
 {
-	0%
-	{
-		background-position: 0 0;
-	}
+	color: #ffffff;
 
-	100%
-	{
-		background-position: 0 120px;
-	}
-}
+	background-color: rgba(32, 230, 208, 0.13);
 
-
-/* Knowledge core breath */
-
-@keyframes TarsCoreBreath
-{
-	0%,
-	100%
-	{
-		box-shadow:
-			inset 0 0 50px rgba(0, 0, 0, 0.95),
-			inset -30px 0 60px rgba(0, 127, 120, 0.10),
-			0 0 10px rgba(32, 230, 208, 0.10);
-	}
-
-	50%
-	{
-		box-shadow:
-			inset 0 0 40px rgba(0, 0, 0, 0.90),
-			inset -40px 0 80px rgba(32, 230, 208, 0.17),
-			0 0 18px rgba(32, 230, 208, 0.20);
-	}
-}
-
-
-/* Archive repository motion */
-
-@keyframes TarsArchiveShift
-{
-	0%,
-	100%
-	{
-		background-position:
-			0 0,
-			0 0;
-	}
-
-	50%
-	{
-		background-position:
-			24px 0,
-			0 0;
-	}
-}
-
-
-/* Memory-layer drift */
-
-@keyframes TarsMemoryDrift
-{
-	0%
-	{
-		background-position:
-			0 0,
-			0 0,
-			0 0;
-	}
-
-	100%
-	{
-		background-position:
-			80px -80px,
-			0 0,
-			0 0;
-	}
-}
-
-
-/* Operational energy pulse */
-
-@keyframes TarsOperationsPulse
-{
-	0%,
-	100%
-	{
-		background-size:
-			105% 105%,
-			100% 100%;
-	}
-
-	50%
-	{
-		background-size:
-			125% 125%,
-			100% 100%;
-	}
-}
-
-
-/* =======================================================
-   25. ENHANCED LIVE HOVER
-   ======================================================= */
-
-.tars-home .tars-module:hover
-{
-	border-top-color: #20e6d0;
-	border-right-color: #20e6d0;
-	border-bottom-color: #20e6d0;
-	border-left-color: #80fff1;
+	border-color: rgba(128, 255, 241, 0.56);
 
 	box-shadow:
-		inset 0 0 45px rgba(0, 0, 0, 0.82),
-		inset -35px 0 70px rgba(32, 230, 208, 0.10),
-		0 0 8px rgba(32, 230, 208, 0.30),
-		0 0 24px rgba(0, 191, 174, 0.18);
+		0 0 8px rgba(32, 230, 208, 0.22),
+		inset 0 0 12px rgba(32, 230, 208, 0.06);
 }
 
 
-/* Make module title wake up on hover */
+/* =======================================================
+   27. MODULE HOVER AND PRESS
+   ======================================================= */
+
+.tars-home.tars-modules-online .tars-module:hover
+{
+	transform:
+		translateY(-5px)
+		scale(1.006);
+
+	border-top-color: rgba(170, 255, 246, 0.60);
+	border-right-color: rgba(128, 255, 241, 0.28);
+	border-bottom-color: rgba(32, 230, 208, 0.20);
+	border-left-color: rgba(128, 255, 241, 0.28);
+
+	box-shadow:
+		0 23px 36px rgba(0, 0, 0, 0.52),
+		0 9px 16px rgba(0, 0, 0, 0.30),
+		0 0 15px rgba(32, 230, 208, 0.09),
+		inset 0 3px 2px rgba(190, 255, 248, 0.22),
+		inset 0 -10px 18px rgba(0, 0, 0, 0.35);
+}
+
+
+.tars-home.tars-modules-online .tars-module:active
+{
+	transform:
+		translateY(5px)
+		scale(0.992);
+
+	border-top-color: rgba(0, 0, 0, 0.70);
+	border-right-color: rgba(32, 230, 208, 0.11);
+	border-bottom-color: rgba(128, 255, 241, 0.20);
+	border-left-color: rgba(32, 230, 208, 0.11);
+
+	box-shadow:
+		0 2px 3px rgba(0, 0, 0, 0.52),
+		inset 0 8px 17px rgba(0, 0, 0, 0.76),
+		inset 0 -1px 0 rgba(128, 255, 241, 0.11);
+}
+
 
 .tars-home .tars-module:hover .tars-module-title
 {
 	color: #ffffff;
 
 	text-shadow:
-		0 0 5px #eaffff,
-		0 0 10px #80fff1,
-		0 0 18px #20e6d0;
+		0 2px 5px rgba(0, 0, 0, 0.94),
+		0 0 6px rgba(234, 255, 255, 0.38),
+		0 0 14px rgba(32, 230, 208, 0.20);
 }
 
 
 /* =======================================================
-   26. TARS MODULE - ASYNCHRONOUS LIGHT SWEEPS
-
-   Breaks synchronization between subsystem cards.
-
-   Each module has:
-   - different sweep duration
-   - different starting delay
-   - slightly different light intensity
+   28. TARS FOOTER
    ======================================================= */
 
-
-/* -------------------------------------------------------
-   MODULE 01 - KNOWLEDGE BASE
-
-   Most active subsystem.
-   Sweep approximately every 7.5 seconds.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(1):before
+.tars-home .tars-home-footer
 {
-	animation:
-		TarsModuleSweep 7.5s linear infinite;
+	clear: both;
 
-	animation-delay: -1.2s;
+	margin-top: 10px;
+	padding-top: 20px;
+
+	border-top: 1px solid #223332;
+
+	text-align: center;
 }
 
 
-/* -------------------------------------------------------
-   MODULE 02 - SYSTEM ARCHIVE
-
-   Slower, heavier archive sweep.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(2):before
+.tars-home .tars-home-footer p
 {
-	animation:
-		TarsModuleSweep 11.5s linear infinite;
+	margin-top: 4px;
+	margin-bottom: 4px;
 
-	animation-delay: -6.7s;
+	color: #526160;
 
-	opacity: 0.75;
+	font-family: "Courier New", monospace;
+	font-size: 9px;
+
+	letter-spacing: 2px;
 }
 
 
-/* -------------------------------------------------------
-   MODULE 03 - RANDOM ACCESS MEMORY
+/* =======================================================
+   29. LARGE DISPLAY
+   ======================================================= */
 
-   Faster and less predictable visually.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(3):before
+@media screen and (min-width: 1400px)
 {
-	animation:
-		TarsModuleSweep 9.25s linear infinite;
+	body.tars-home-body .tars-home
+	{
+		width: 1280px;
+	}
 
-	animation-delay: -3.8s;
 
-	opacity: 0.88;
+	body.tars-home-body .tars-home-title
+	{
+		font-size: 72px;
+	}
+
+
+	body.tars-home-body .tars-module
+	{
+		min-height: 285px;
+	}
 }
 
 
-/* -------------------------------------------------------
-   MODULE 04 - ACTIVE SYSTEMS
+/* =======================================================
+   30. SMALL DISPLAY
+   ======================================================= */
 
-   Slow operational scanner.
-   ------------------------------------------------------- */
-
-.tars-home .tars-module:nth-child(4):before
+@media screen and (max-width: 800px)
 {
-	animation:
-		TarsModuleSweep 13.75s linear infinite;
+	body.tars-home-body
+	{
+		padding-right: 15px;
+		padding-left: 15px;
+	}
 
-	animation-delay: -9.4s;
 
-	opacity: 0.82;
+	body.tars-home-body .tars-home
+	{
+		width: auto;
+
+		padding-top: 25px;
+		padding-bottom: 30px;
+	}
+
+
+	.tars-home .tars-home-hero
+	{
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+
+	.tars-home .tars-home-title
+	{
+		font-size: 44px;
+		letter-spacing: 10px;
+	}
+
+
+	body.tars-home-body .tars-module
+	{
+		display: block;
+
+		width: 100%;
+		min-height: 0;
+
+		margin-right: 0;
+		margin-bottom: 18px;
+	}
 }
-
