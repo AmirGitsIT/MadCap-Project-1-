@@ -7,7 +7,8 @@
   ShowMadCapBacklink="true"
   GlossaryTermConversion="marked"
   PatchHeadingLevels="true"
-  MasterToc="/Project/TOCs/Primary.fltoc">
+  MasterToc="/Project/TOCs/Primary.fltoc"
+  MasterPageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl">
   <PrintedOutput
     CollapseMargins="true"
     GenerateTOCProxy="true"

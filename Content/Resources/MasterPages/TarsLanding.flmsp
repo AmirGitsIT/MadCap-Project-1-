@@ -7,168 +7,24 @@
 	<body class="tars-home-body">
 
 		<!-- =====================================================
-		LIQUID GLASS DISTORTION FILTERS
-
-		Each subsystem has independent glass distortion.
-
-		Displacement has been reduced from the previous
-		82-88 range so the subsystem scenes remain readable
-		while retaining obvious liquid refraction.
-		===================================================== -->
-
-		<svg width="0" height="0" style="position: absolute;">
-			<defs>
-
-
-				<!-- =================================================
-				MODULE 01 - KNOWLEDGE BASE
-				Balanced liquid refraction
-				================================================= -->
-
-				<filter id="tars-glass-knowledge"
-					x="-100%"
-					y="-100%"
-					width="300%"
-					height="300%"
-					filterUnits="objectBoundingBox"
-					primitiveUnits="userSpaceOnUse">
-
-					<feTurbulence
-						type="fractalNoise"
-						baseFrequency="0.012 0.012"
-						numOctaves="2"
-						seed="92"
-					result="knowledge-noise" />
-
-					<feGaussianBlur
-						in="knowledge-noise"
-						stdDeviation="2"
-					result="knowledge-blur" />
-
-					<feDisplacementMap
-						in="SourceGraphic"
-						in2="knowledge-blur"
-						scale="60"
-						xChannelSelector="R"
-					yChannelSelector="G" />
-
-				</filter>
-
-
-				<!-- =================================================
-				MODULE 02 - SYSTEM ARCHIVE
-				Calmer architectural glass
-				================================================= -->
-
-				<filter id="tars-glass-archive"
-					x="-100%"
-					y="-100%"
-					width="300%"
-					height="300%"
-					filterUnits="objectBoundingBox"
-					primitiveUnits="userSpaceOnUse">
-
-					<feTurbulence
-						type="fractalNoise"
-						baseFrequency="0.010 0.014"
-						numOctaves="2"
-						seed="137"
-					result="archive-noise" />
-
-					<feGaussianBlur
-						in="archive-noise"
-						stdDeviation="1.2"
-					result="archive-blur" />
-
-					<feDisplacementMap
-						in="SourceGraphic"
-						in2="archive-blur"
-						scale="15"
-						xChannelSelector="B"
-					yChannelSelector="G" />
-
-				</filter>
-
-
-				<!-- =================================================
-				MODULE 03 - RANDOM ACCESS MEMORY
-				Slightly unstable lens
-				================================================= -->
-
-				<filter id="tars-glass-memory"
-					x="-100%"
-					y="-100%"
-					width="300%"
-					height="300%"
-					filterUnits="objectBoundingBox"
-					primitiveUnits="userSpaceOnUse">
-
-					<feTurbulence
-						type="fractalNoise"
-						baseFrequency="0.015 0.011"
-						numOctaves="3"
-						seed="211"
-					result="memory-noise" />
-
-					<feGaussianBlur
-						in="memory-noise"
-						stdDeviation="1.8"
-					result="memory-blur" />
-
-					<feDisplacementMap
-						in="SourceGraphic"
-						in2="memory-blur"
-						scale="63"
-						xChannelSelector="R"
-					yChannelSelector="B" />
-
-				</filter>
-
-
-				<!-- =================================================
-				MODULE 04 - ACTIVE SYSTEMS
-				Controlled diagnostic refraction
-				================================================= -->
-
-				<filter id="tars-glass-operations"
-					x="-100%"
-					y="-100%"
-					width="300%"
-					height="300%"
-					filterUnits="objectBoundingBox"
-					primitiveUnits="userSpaceOnUse">
-
-					<feTurbulence
-						type="fractalNoise"
-						baseFrequency="0.009 0.016"
-						numOctaves="2"
-						seed="347"
-					result="operations-noise" />
-
-					<feGaussianBlur
-						in="operations-noise"
-						stdDeviation="2.4"
-					result="operations-blur" />
-
-					<feDisplacementMap
-						in="SourceGraphic"
-						in2="operations-blur"
-						scale="57"
-						xChannelSelector="G"
-					yChannelSelector="B" />
-
-				</filter>
-
-
-			</defs>
-		</svg>
-
-
-		<!-- =====================================================
 		TARS STARTUP OVERLAY
 		===================================================== -->
 
 		<div id="tars-loader">
+
+
+			<!-- =================================================
+			TARS VOICE
+			================================================= -->
+
+			<audio id="tars-welcome-audio" preload="auto">
+				<source src="../../Tars Voice.mp3" type="audio/mpeg" />
+			</audio>
+
+
+			<!-- =================================================
+			STARTUP STATUS
+			================================================= -->
 
 			<div class="tars-loader-status">
 
@@ -204,8 +60,32 @@
 					KNOWLEDGE CORE ONLINE
 				</p>
 
+
+				<!-- =============================================
+				AUDIO FALLBACK
+
+				Hidden unless audible autoplay is blocked.
+				============================================= -->
+
+				<div id="tars-audio-control">
+
+					<p class="tars-audio-label">
+						TARS AUDIO CHANNEL AVAILABLE
+					</p>
+
+					<button id="tars-audio-enable"
+						type="button">
+						INITIALIZE VOICE INTERFACE
+					</button>
+
+				</div>
+
 			</div>
 
+
+			<!-- =================================================
+			STARTUP CUBE
+			================================================= -->
 
 			<div class="tars-loader-surface">
 
@@ -229,7 +109,7 @@
 
 
 		<!-- =====================================================
-		TARS STARTUP + MODULE INITIALIZATION
+		TARS STARTUP CONTROLLER
 		===================================================== -->
 
 		<script type="text/javascript">
@@ -237,6 +117,20 @@
 			{
 			var loader = document.getElementById('tars-loader');
 			var tarsHome = document.querySelector('.tars-home');
+
+			var tarsVoice =
+			document.getElementById('tars-welcome-audio');
+
+			var audioControl =
+			document.getElementById('tars-audio-control');
+
+			var audioEnable =
+			document.getElementById('tars-audio-enable');
+
+
+			/* ---------------------------------------------
+			MODULE INITIALIZATION
+			--------------------------------------------- */
 
 			function initializeModules()
 			{
@@ -246,13 +140,96 @@
 			}
 			}
 
+
+			/* ---------------------------------------------
+			HIDE AUDIO CONTROL
+			--------------------------------------------- */
+
+			function hideAudioControl()
+			{
+			if (audioControl)
+			{
+			audioControl.style.display = 'none';
+			}
+			}
+
+
+			/* ---------------------------------------------
+			SHOW AUDIO CONTROL
+			--------------------------------------------- */
+
+			function showAudioControl()
+			{
+			if (audioControl)
+			{
+			audioControl.style.display = 'block';
+			}
+			}
+
+
+			/* ---------------------------------------------
+			PLAY TARS VOICE
+			--------------------------------------------- */
+
+			function playTarsVoice()
+			{
+			if (!tarsVoice)
+			{
+			return;
+			}
+
+			tarsVoice.volume = 0.90;
+
+			var playback = tarsVoice.play();
+
+			if (playback !== undefined)
+			{
+			playback.then(function ()
+			{
+			hideAudioControl();
+			});
+
+			playback.catch(function ()
+			{
+			showAudioControl();
+			});
+			}
+			}
+
+
+			/* ---------------------------------------------
+			MANUAL AUDIO INITIALIZATION
+
+			The button click is a real browser user
+			gesture, allowing audible playback.
+			--------------------------------------------- */
+
+			if (audioEnable)
+			{
+			audioEnable.addEventListener('click', function ()
+			{
+			playTarsVoice();
+			});
+			}
+
+
+			/* ---------------------------------------------
+			NO LOADER
+			--------------------------------------------- */
+
 			if (!loader)
 			{
 			initializeModules();
 			return;
 			}
 
-			/* Startup already completed in this session. */
+
+			/* ---------------------------------------------
+			STARTUP ALREADY COMPLETED THIS SESSION
+
+			Skip loader and voice.
+			--------------------------------------------- */
+
 			if (sessionStorage.getItem('tarsStartupShown') === 'true')
 			{
 			loader.style.display = 'none';
@@ -265,10 +242,36 @@
 			return;
 			}
 
-			/* Record startup for the current browser session. */
+
+			/* ---------------------------------------------
+			NEW STARTUP SESSION
+			--------------------------------------------- */
+
 			sessionStorage.setItem('tarsStartupShown', 'true');
 
-			/* Run the 10-second TARS startup sequence. */
+			hideAudioControl();
+
+
+			/* ---------------------------------------------
+			ATTEMPT TARS VOICE AT 2.3 SECONDS
+
+			If Chrome allows audible autoplay, the voice
+			simply begins.
+
+			If blocked, the manual audio control appears.
+			--------------------------------------------- */
+
+			window.setTimeout(function ()
+			{
+			playTarsVoice();
+
+			}, 1300);
+
+
+			/* ---------------------------------------------
+			COMPLETE STARTUP AT 10 SECONDS
+			--------------------------------------------- */
+
 			window.setTimeout(function ()
 			{
 			loader.classList.add('tars-loader-hidden');

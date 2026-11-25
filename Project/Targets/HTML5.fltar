@@ -9,7 +9,7 @@
   ResolveCssVariables="true"
   DefaultUrl="/Content/START_HERE.htm"
   PatchHeadingLevels="true"
-  ConditionTagExpression="exclude[Default.Web]"
+  ConditionTagExpression="include[Default.Web], exclude[Default.PrintOnly]"
   EquationsOutputType="PNG"
   ContentInclusionType="Referenced">
   <PrintedOutput

@@ -3,62 +3,92 @@
   Version="1">
   <TocEntry
     Title="[%=System.LinkedTitle%]"
-    Link="/Content/TARS-Home.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+    Link="/Content/PRINT-TOC.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    StartSection="false"
+    conditions="Default.PrintOnly" />
   <TocEntry
     Title="[%=System.LinkedTitle%]"
     Link="/Content/Amir_OS_README.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     SectionNumberReset="continue"
     VolumeNumberReset="same"
-    ChapterNumberReset="continue"
+    ChapterNumberReset="reset"
     BreakType="chapter"
     PageNumberReset="reset"
     StartSection="false"
     PageNumber=""
-    ChapterNumber=""></TocEntry>
+    ChapterNumber="1"
+    ReplaceMergeNode="false"
+    PageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl"></TocEntry>
   <TocEntry
     Title="[%=System.LinkedTitle%]"
     Link="/Content/HEAD.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     BreakType="chapter"
     StartSection="false"
-    PageNumberReset="continue" />
+    PageNumberReset="continue"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl" />
   <TocEntry
     Title="[%=System.LinkedTitle%]"
     Link="/Content/START_HERE.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-    BreakType="pageLayout"
+    BreakType="chapter"
     StartSection="false"
     PageNumberReset="continue"
     SectionNumberReset="continue"
     VolumeNumberReset="same"
-    ChapterNumberReset="continue">
-    <TocEntry
-      Title="[%=System.LinkedTitle%]"
-      Link="/Content/CURRENT_STATE.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-      BreakType="chapter"
-      StartSection="false"
-      PageNumberReset="continue" />
-  </TocEntry>
+    ChapterNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/CURRENT_STATE.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
+    BreakType="chapter"
+    StartSection="false"
+    PageNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl" />
   <TocEntry
     Title="[%=System.LinkedTitle%]"
     Link="/Content/AGENTS.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     BreakType="chapter"
     StartSection="false"
-    PageNumberReset="continue"></TocEntry>
+    PageNumberReset="continue"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl"></TocEntry>
   <TocEntry
     Title="[%=System.LinkedTitle%]"
     Link="/Content/ACTIVE_PROJECT_V2.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     BreakType="chapter"
     StartSection="false"
-    PageNumberReset="continue"></TocEntry>
+    PageNumberReset="continue"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl"></TocEntry>
   <TocEntry
     Title="[%=System.LinkedTitle%]"
     Link="/Content/COLLABORATION.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
     BreakType="chapter"
     StartSection="false"
-    PageNumberReset="continue"></TocEntry>
+    PageNumberReset="continue"
+    SectionNumberReset="continue"
+    VolumeNumberReset="same"
+    ChapterNumberReset="continue"
+    PageLayout="/Content/Resources/PageLayouts/Tars_Print.flpgl"></TocEntry>
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Archive-2.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/TARS-Home.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
+  <TocEntry
+    Title="[%=System.LinkedTitle%]"
+    Link="/Content/Random Access Memory.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" />
   <TocEntry
     Title="[%=System.LinkedTitle%]"
     Link="/Content/Button Test.htm" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd"
-    BreakType="chapter"
+    BreakType="none"
     StartSection="false"
     PageNumberReset="continue"></TocEntry>
 </CatapultToc>

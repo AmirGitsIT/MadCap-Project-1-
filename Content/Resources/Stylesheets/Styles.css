@@ -298,77 +298,246 @@ h1.Neon
 	}
 }
 
-
 /* =======================================================
-   8. PRINT OUTPUT
+   8. TARS PRINT / PDF THEME
    ======================================================= */
 
 @media print
 {
-	body
-	{
-		color: #000000;
+	/* ---------------------------------------------------
+	   PAGE CONTENT
 
-		background-color: #ffffff;
-		background-image: none;
-	}
+	   Page Layout owns the background.
+	   Topic body stays transparent.
+	   --------------------------------------------------- */
 
+body
+{
+	font-family: Arial, sans-serif;
+	font-size: 10.5pt;
+	line-height: 1.55em;
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ul,
-	ol,
-	li,
-	a,
-	MadCap|xref
-	{
-		color: #000000;
-	}
+	color: #e6e7e8;
 
+	background: transparent;
 
-	img
-	{
-		max-width: 100%;
-		height: auto;
-	}
+	margin: 0;
+	max-width: none;
+}
 
+	/* ---------------------------------------------------
+	   CHAPTER TITLE
+	   Static print interpretation of h1.Neon.
+	   --------------------------------------------------- */
 
 	h1
 	{
+		color: #eaffff;
+
+		font-size: 25pt;
+		line-height: 1.15em;
+		font-weight: bold;
+
+		letter-spacing: 1px;
+
+		margin-top: 0;
+		margin-bottom: 24pt;
+
+		padding-top: 8pt;
+		padding-bottom: 10pt;
+
+		border-bottom: 1px solid #20e6d0;
+
 		mc-auto-number-format: 'CH:Chapter {chapnum}. ';
-	}
-
-
-	h2
-	{
-		mc-auto-number-format: 'CH:{chapnum}.{n+} ';
-	}
-
-
-	h3
-	{
-		mc-auto-number-format: 'CH:{chapnum}.{n}.{n+} ';
 	}
 
 
 	h1.Neon
 	{
-		color: #a9a9a9;
-		font-size: 36pt;
+		color: #eaffff;
+
+		font-size: 25pt;
+		line-height: 1.15em;
+
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+
+		animation: none;
+
+		mc-auto-number-format: 'CH:Chapter {chapnum}. ';
 	}
 
 
+	/* ---------------------------------------------------
+	   PRINT TOC TITLE
+	   --------------------------------------------------- */
+
+	h1.Contents
+	{
+		color: #eaffff;
+
+		font-size: 25pt;
+		line-height: 1.15em;
+
+		letter-spacing: 2px;
+		text-transform: uppercase;
+
+		margin-top: 0;
+		margin-bottom: 22pt;
+
+		padding-bottom: 10pt;
+
+		border-bottom: 1px solid #20e6d0;
+
+		mc-heading-level: 0;
+		mc-auto-number-format: "";
+	}
+
+
+	/* ---------------------------------------------------
+	   H2
+	   --------------------------------------------------- */
+
+	h2
+	{
+		color: #dfe7e7;
+
+		font-size: 16pt;
+		line-height: 1.25em;
+
+		margin-top: 22pt;
+		margin-bottom: 9pt;
+
+		padding-bottom: 4pt;
+
+		border-bottom: 1px solid #334846;
+
+		mc-auto-number-format: 'CH:{chapnum}.{n+} ';
+	}
+
+
+	/* ---------------------------------------------------
+	   H3
+	   --------------------------------------------------- */
+
+	h3
+	{
+		color: #80d8d0;
+
+		font-size: 12.5pt;
+		line-height: 1.3em;
+
+		margin-top: 16pt;
+		margin-bottom: 6pt;
+
+		mc-auto-number-format: 'CH:{chapnum}.{n}.{n+} ';
+	}
+
+
+	h4,
+	h5,
+	h6
+	{
+		color: #b8c2c1;
+
+		margin-top: 12pt;
+		margin-bottom: 5pt;
+	}
+
+
+	/* ---------------------------------------------------
+	   BODY COPY
+	   --------------------------------------------------- */
+
+	p
+	{
+		color: #e1e2e3;
+
+		margin-top: 5pt;
+		margin-bottom: 8pt;
+	}
+
+
+	ul,
+	ol
+	{
+		color: #e0e1e2;
+
+		margin-top: 6pt;
+		margin-bottom: 10pt;
+	}
+
+
+	li
+	{
+		margin-bottom: 4pt;
+	}
+
+
+	/* ---------------------------------------------------
+	   LINKS / CROSS REFERENCES
+	   --------------------------------------------------- */
+
+	a
+	{
+		color: #80d8d0;
+		text-decoration: none;
+	}
+
+
+	MadCap|xref
+	{
+		color: #80d8d0;
+		mc-format: '{title}';
+	}
+
+
+	/* ---------------------------------------------------
+	   IMAGES
+	   --------------------------------------------------- */
+
+	img
+	{
+		max-width: 100%;
+		height: auto;
+
+		border: 1px solid #334846;
+	}
+
+
+	p.Image
+	{
+		margin-top: 10pt;
+		margin-bottom: 0;
+	}
+
+
+	p.Figure
+	{
+		color: #8d9998;
+
+		font-size: 9pt;
+		font-style: italic;
+
+		margin-top: 3pt;
+		margin-bottom: 12pt;
+
+		mc-auto-number-format: 'H: {b}FIGURE {n+}:{/b}';
+	}
+
+
+	/* ---------------------------------------------------
+	   WEB-ONLY UI
+	   --------------------------------------------------- */
+
 	#tars-loader,
-	.tars-home
+	.tars-home,
+	video
 	{
 		display: none;
 	}
 }
+
 
 
 /* =======================================================
@@ -1658,4 +1827,68 @@ body.tars-home-body .tars-home
 		margin-right: 0;
 		margin-bottom: 18px;
 	}
+}
+
+/* =======================================================
+   31. FULL-CARD MODULE LINKS
+
+   Archive, RAM, and Active Systems behave as giant
+   clickable controls.
+
+   Knowledge Base retains its dedicated action button.
+   ======================================================= */
+
+.tars-home .tars-module-clickable
+{
+	cursor: pointer;
+}
+
+
+/* Transparent link covers the entire card */
+
+.tars-home .tars-card-link
+{
+	position: absolute;
+
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	z-index: 10;
+
+	display: block;
+
+	border-radius: 34px;
+
+	text-decoration: none;
+
+	background-color: transparent;
+}
+
+
+/* Keyboard accessibility */
+
+.tars-home .tars-card-link:focus
+{
+	outline: 2px solid rgba(128, 255, 241, 0.70);
+	outline-offset: -4px;
+}
+
+
+/* Slightly stronger response for clickable cards */
+
+.tars-home.tars-modules-online .tars-module-clickable:hover
+{
+	border-top-color: rgba(170, 255, 246, 0.72);
+	border-right-color: rgba(128, 255, 241, 0.34);
+	border-bottom-color: rgba(32, 230, 208, 0.24);
+	border-left-color: rgba(128, 255, 241, 0.34);
+
+	box-shadow:
+		0 23px 36px rgba(0, 0, 0, 0.52),
+		0 9px 16px rgba(0, 0, 0, 0.30),
+		0 0 18px rgba(32, 230, 208, 0.12),
+		inset 0 3px 2px rgba(190, 255, 248, 0.24),
+		inset 0 -10px 18px rgba(0, 0, 0, 0.35);
 }
